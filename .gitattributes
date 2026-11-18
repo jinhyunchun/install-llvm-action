@@ -1,1 +1,6 @@
-* text=auto
+# The bundler embeds source text in dist/main.js.map, so the sources must have
+# the same line endings on every platform for `yarn build` to be reproducible.
+*.ts text eol=lf
+
+# Generated bundle: always LF, and collapsed in GitHub diffs.
+dist/** text eol=lf linguist-generated
