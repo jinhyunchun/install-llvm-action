@@ -9,10 +9,15 @@ on:
       - master
   workflow_call:
     inputs:
-      assets-artifact:
-        description: Name of an artifact holding an assets.json to test instead of the checked-in one.
+      artifact:
+        description: Name of an artifact to extract over the checkout before testing (e.g. a regenerated assets.json or a rebuilt dist).
         type: string
         required: false
+      artifact-path:
+        description: Directory to extract the artifact into.
+        type: string
+        required: false
+        default: .
 
 jobs:
   test:
@@ -33,11 +38,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Download generated assets
-        if: inputs.assets-artifact
+      - name: Download artifact
+        if: inputs.artifact
         uses: actions/download-artifact@v8
         with:
-          name: "${{ inputs.assets-artifact }}"
+          name: "${{ inputs.artifact }}"
+          path: "${{ inputs.artifact-path }}"
 
       - name: Arch (Ubuntu / macOS)
         if: matrix.os != 'windows-latest'

@@ -1,0 +1,28 @@
+version: 2
+
+updates:
+  # Actions used by the workflows (checkout, setup-node, cache, ...).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns:
+          - "*"
+
+  # npm dependencies. Runtime dependencies are bundled into dist/main.js,
+  # so those updates only take effect after `yarn build` is re-run and committed.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      runtime:
+        dependency-type: production
+      dev:
+        dependency-type: development

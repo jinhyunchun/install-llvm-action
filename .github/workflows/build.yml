@@ -1,0 +1,116 @@
+# yaml-language-server: $schema=https://json-schema.org/draft-07/schema#
+
+# action.yml runs the committed dist/main.js, so the bundle has to match what
+# `yarn build` produces from the current sources and lockfile.
+#
+# - Dependabot PRs: the bundle is rebuilt, tested, and committed to the PR branch.
+# - Everything else: the job fails if the committed bundle is out of date.
+
+name: Build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      rebuild: ${{ steps.check.outputs.rebuild }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          # This job runs dependency install scripts; keep the token out of reach.
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          check-latest: true
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Check Bundle
+        id: check
+        env:
+          IS_DEPENDABOT_PR: ${{ github.event_name == 'pull_request' && github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.head.repo.full_name == github.repository }}
+        run: |
+          if [[ -z "$(git status --porcelain -- dist)" ]]; then
+            echo "dist is up to date."
+            echo "rebuild=false" >> "$GITHUB_OUTPUT"
+          elif [[ "$IS_DEPENDABOT_PR" == "true" ]]; then
+            echo "dist is out of date; it will be rebuilt on this Dependabot PR."
+            echo "rebuild=true" >> "$GITHUB_OUTPUT"
+          else
+            git diff --stat -- dist
+            echo "::error::dist is out of date. Run 'yarn build' and commit the result."
+            exit 1
+          fi
+
+      - name: Upload Rebuilt Bundle
+        if: steps.check.outputs.rebuild == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: rebuilt-dist
+          path: dist/
+          if-no-files-found: error
+
+  test:
+    needs: build
+    if: needs.build.outputs.rebuild == 'true'
+    uses: ./.github/workflows/test.yml
+    with:
+      artifact: rebuilt-dist
+      artifact-path: dist
+
+  push:
+    needs: [build, test]
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Download Rebuilt Bundle
+        uses: actions/download-artifact@v8
+        with:
+          name: rebuilt-dist
+          path: dist
+
+      - name: Commit and Push
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          # Don't put a bundle built from an older commit on top of a newer one.
+          if [[ "$(git rev-parse HEAD)" != "$HEAD_SHA" ]]; then
+            echo "The PR branch moved since this run started; skipping."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist
+          # "[dependabot skip]" lets Dependabot keep rebasing the PR over this commit.
+          git commit -m "Rebuild dist [dependabot skip]"
+          git push
