@@ -59,7 +59,7 @@ jobs:
     if: needs.generate.outputs.changed == 'true'
     uses: ./.github/workflows/test.yml
     with:
-      assets-artifact: generated-assets
+      artifact: generated-assets
 
   push:
     needs: [generate, test]
