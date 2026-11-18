@@ -7,6 +7,12 @@ on:
   push:
     branches:
       - master
+  workflow_call:
+    inputs:
+      assets-artifact:
+        description: Name of an artifact holding an assets.json to test instead of the checked-in one.
+        type: string
+        required: false
 
 jobs:
   test:
@@ -25,7 +31,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Download generated assets
+        if: inputs.assets-artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: "${{ inputs.assets-artifact }}"
 
       - name: Arch (Ubuntu / macOS)
         if: matrix.os != 'windows-latest'
