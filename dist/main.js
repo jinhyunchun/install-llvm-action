@@ -17399,15 +17399,15 @@ module.exports = {
 });
 
 
-parcelRegister("3hxy2", function(module, exports) {
+parcelRegister("2mocL", function(module, exports) {
 'use strict';
 
-var $9m0kz = parcelRequire("9m0kz");
-var $263cfb8f074106e8$require$MAX_SAFE_COMPONENT_LENGTH = $9m0kz.MAX_SAFE_COMPONENT_LENGTH;
-var $263cfb8f074106e8$require$MAX_SAFE_BUILD_LENGTH = $9m0kz.MAX_SAFE_BUILD_LENGTH;
-var $263cfb8f074106e8$require$MAX_LENGTH = $9m0kz.MAX_LENGTH;
+var $g7kfl = parcelRequire("g7kfl");
+var $1b80696fe5454da2$require$MAX_SAFE_COMPONENT_LENGTH = $g7kfl.MAX_SAFE_COMPONENT_LENGTH;
+var $1b80696fe5454da2$require$MAX_SAFE_BUILD_LENGTH = $g7kfl.MAX_SAFE_BUILD_LENGTH;
+var $1b80696fe5454da2$require$MAX_LENGTH = $g7kfl.MAX_LENGTH;
 
-var $dvl3O = parcelRequire("dvl3O");
+var $5i3Xb = parcelRequire("5i3Xb");
 exports = module.exports = {};
 // The actual regexps go on exports.re
 const re = exports.re = [];
@@ -17430,11 +17430,11 @@ const safeRegexReplacements = [
     ],
     [
         '\\d',
-        $263cfb8f074106e8$require$MAX_LENGTH
+        $1b80696fe5454da2$require$MAX_LENGTH
     ],
     [
         LETTERDASHNUMBER,
-        $263cfb8f074106e8$require$MAX_SAFE_BUILD_LENGTH
+        $1b80696fe5454da2$require$MAX_SAFE_BUILD_LENGTH
     ]
 ];
 const makeSafeRegex = (value)=>{
@@ -17444,7 +17444,7 @@ const makeSafeRegex = (value)=>{
 const createToken = (name, value, isGlobal)=>{
     const safe = makeSafeRegex(value);
     const index = R++;
-    $dvl3O(name, index, value);
+    $5i3Xb(name, index, value);
     t[name] = index;
     src[index] = value;
     safeSrc[index] = safe;
@@ -17509,7 +17509,7 @@ createToken('XRANGE', `^${src[t.GTLT]}\\s*${src[t.XRANGEPLAIN]}$`);
 createToken('XRANGELOOSE', `^${src[t.GTLT]}\\s*${src[t.XRANGEPLAINLOOSE]}$`);
 // Coercion.
 // Extract anything that could conceivably be a part of a valid semver
-createToken('COERCEPLAIN', `${"(^|[^\\d])(\\d{1,"}${$263cfb8f074106e8$require$MAX_SAFE_COMPONENT_LENGTH}})` + `(?:\\.(\\d{1,${$263cfb8f074106e8$require$MAX_SAFE_COMPONENT_LENGTH}}))?` + `(?:\\.(\\d{1,${$263cfb8f074106e8$require$MAX_SAFE_COMPONENT_LENGTH}}))?`);
+createToken('COERCEPLAIN', `${"(^|[^\\d])(\\d{1,"}${$1b80696fe5454da2$require$MAX_SAFE_COMPONENT_LENGTH}})` + `(?:\\.(\\d{1,${$1b80696fe5454da2$require$MAX_SAFE_COMPONENT_LENGTH}}))?` + `(?:\\.(\\d{1,${$1b80696fe5454da2$require$MAX_SAFE_COMPONENT_LENGTH}}))?`);
 createToken('COERCE', `${src[t.COERCEPLAIN]}(?:$|[^\\d])`);
 createToken('COERCEFULL', src[t.COERCEPLAIN] + `(?:${src[t.PRERELEASE]})?` + `(?:${src[t.BUILD]})?` + `(?:$|[^\\d])`);
 createToken('COERCERTL', src[t.COERCE], true);
@@ -17548,20 +17548,20 @@ createToken('GTE0', '^\\s*>=\\s*0\\.0\\.0\\s*$');
 createToken('GTE0PRE', '^\\s*>=\\s*0\\.0\\.0-0\\s*$');
 
 });
-parcelRegister("9m0kz", function(module, exports) {
+parcelRegister("g7kfl", function(module, exports) {
 'use strict';
 // Note: this is the semver.org version of the spec that it implements
 // Not necessarily the package version of this code.
-const $6cf66cd1cf29397a$var$SEMVER_SPEC_VERSION = '2.0.0';
-const $6cf66cd1cf29397a$var$MAX_LENGTH = 256;
-const $6cf66cd1cf29397a$var$MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || /* istanbul ignore next */ 9007199254740991;
+const $bbbd0153041166d5$var$SEMVER_SPEC_VERSION = '2.0.0';
+const $bbbd0153041166d5$var$MAX_LENGTH = 256;
+const $bbbd0153041166d5$var$MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || /* istanbul ignore next */ 9007199254740991;
 // Max safe segment length for coercion.
-const $6cf66cd1cf29397a$var$MAX_SAFE_COMPONENT_LENGTH = 16;
+const $bbbd0153041166d5$var$MAX_SAFE_COMPONENT_LENGTH = 16;
 // Max safe length for a build identifier. The max length minus 6 characters for
 // the shortest version with a build 0.0.0+BUILD.
-const $6cf66cd1cf29397a$var$MAX_SAFE_BUILD_LENGTH = $6cf66cd1cf29397a$var$MAX_LENGTH - 6;
+const $bbbd0153041166d5$var$MAX_SAFE_BUILD_LENGTH = $bbbd0153041166d5$var$MAX_LENGTH - 6;
 // ECMAScript whitespace and line terminators matched by \s.
-const $6cf66cd1cf29397a$var$WHITESPACE_CHARACTERS = [
+const $bbbd0153041166d5$var$WHITESPACE_CHARACTERS = [
     '\t',
     '\n',
     '\v',
@@ -17588,7 +17588,7 @@ const $6cf66cd1cf29397a$var$WHITESPACE_CHARACTERS = [
     '\u3000',
     '\ufeff'
 ];
-const $6cf66cd1cf29397a$var$RELEASE_TYPES = [
+const $bbbd0153041166d5$var$RELEASE_TYPES = [
     'major',
     'premajor',
     'minor',
@@ -17598,23 +17598,23 @@ const $6cf66cd1cf29397a$var$RELEASE_TYPES = [
     'prerelease'
 ];
 module.exports = {
-    MAX_LENGTH: $6cf66cd1cf29397a$var$MAX_LENGTH,
-    MAX_SAFE_COMPONENT_LENGTH: $6cf66cd1cf29397a$var$MAX_SAFE_COMPONENT_LENGTH,
-    MAX_SAFE_BUILD_LENGTH: $6cf66cd1cf29397a$var$MAX_SAFE_BUILD_LENGTH,
-    MAX_SAFE_INTEGER: $6cf66cd1cf29397a$var$MAX_SAFE_INTEGER,
-    WHITESPACE_CHARACTERS: $6cf66cd1cf29397a$var$WHITESPACE_CHARACTERS,
-    RELEASE_TYPES: $6cf66cd1cf29397a$var$RELEASE_TYPES,
-    SEMVER_SPEC_VERSION: $6cf66cd1cf29397a$var$SEMVER_SPEC_VERSION,
+    MAX_LENGTH: $bbbd0153041166d5$var$MAX_LENGTH,
+    MAX_SAFE_COMPONENT_LENGTH: $bbbd0153041166d5$var$MAX_SAFE_COMPONENT_LENGTH,
+    MAX_SAFE_BUILD_LENGTH: $bbbd0153041166d5$var$MAX_SAFE_BUILD_LENGTH,
+    MAX_SAFE_INTEGER: $bbbd0153041166d5$var$MAX_SAFE_INTEGER,
+    WHITESPACE_CHARACTERS: $bbbd0153041166d5$var$WHITESPACE_CHARACTERS,
+    RELEASE_TYPES: $bbbd0153041166d5$var$RELEASE_TYPES,
+    SEMVER_SPEC_VERSION: $bbbd0153041166d5$var$SEMVER_SPEC_VERSION,
     FLAG_INCLUDE_PRERELEASE: 1,
     FLAG_LOOSE: 2
 };
 
 });
 
-parcelRegister("dvl3O", function(module, exports) {
+parcelRegister("5i3Xb", function(module, exports) {
 'use strict';
-const $9d4e81c3a5a73ad4$var$debug = typeof process === 'object' && process.env && process.env.NODE_DEBUG && /\bsemver\b/i.test(process.env.NODE_DEBUG) ? (...args)=>console.error('SEMVER', ...args) : ()=>{};
-module.exports = $9d4e81c3a5a73ad4$var$debug;
+const $3da1b34663c33098$var$debug = typeof process === 'object' && process.env && process.env.NODE_DEBUG && /\bsemver\b/i.test(process.env.NODE_DEBUG) ? (...args)=>console.error('SEMVER', ...args) : ()=>{};
+module.exports = $3da1b34663c33098$var$debug;
 
 });
 
@@ -23844,98 +23844,98 @@ function $da816f606135dc7c$export$f2fa60e41cb77493(aud) {
 
 
 
-var $60652d0c51947fdc$exports = {};
+var $7525af423601f675$exports = {};
 'use strict';
 
-var $3hxy2 = parcelRequire("3hxy2");
+var $2mocL = parcelRequire("2mocL");
 
-var $9m0kz = parcelRequire("9m0kz");
-var $21f7971eeab3bc0c$exports = {};
+var $g7kfl = parcelRequire("g7kfl");
+var $6c372f01b88a20b2$exports = {};
 'use strict';
 
-var $dvl3O = parcelRequire("dvl3O");
+var $5i3Xb = parcelRequire("5i3Xb");
 
-var $9m0kz = parcelRequire("9m0kz");
-var $21f7971eeab3bc0c$require$MAX_LENGTH = $9m0kz.MAX_LENGTH;
-var $21f7971eeab3bc0c$require$MAX_SAFE_INTEGER = $9m0kz.MAX_SAFE_INTEGER;
+var $g7kfl = parcelRequire("g7kfl");
+var $6c372f01b88a20b2$require$MAX_LENGTH = $g7kfl.MAX_LENGTH;
+var $6c372f01b88a20b2$require$MAX_SAFE_INTEGER = $g7kfl.MAX_SAFE_INTEGER;
 
-var $3hxy2 = parcelRequire("3hxy2");
-var $21f7971eeab3bc0c$require$re = $3hxy2.safeRe;
-var $21f7971eeab3bc0c$require$t = $3hxy2.t;
-var $067aa121efc78f83$exports = {};
+var $2mocL = parcelRequire("2mocL");
+var $6c372f01b88a20b2$require$re = $2mocL.safeRe;
+var $6c372f01b88a20b2$require$t = $2mocL.t;
+var $f21a839c3ddc7da6$exports = {};
 'use strict';
 // parse out just the options we care about
-const $067aa121efc78f83$var$looseOption = Object.freeze({
+const $f21a839c3ddc7da6$var$looseOption = Object.freeze({
     loose: true
 });
-const $067aa121efc78f83$var$emptyOpts = Object.freeze({});
-const $067aa121efc78f83$var$parseOptions = (options)=>{
-    if (!options) return $067aa121efc78f83$var$emptyOpts;
-    if (typeof options !== 'object') return $067aa121efc78f83$var$looseOption;
+const $f21a839c3ddc7da6$var$emptyOpts = Object.freeze({});
+const $f21a839c3ddc7da6$var$parseOptions = (options)=>{
+    if (!options) return $f21a839c3ddc7da6$var$emptyOpts;
+    if (typeof options !== 'object') return $f21a839c3ddc7da6$var$looseOption;
     return options;
 };
-$067aa121efc78f83$exports = $067aa121efc78f83$var$parseOptions;
+$f21a839c3ddc7da6$exports = $f21a839c3ddc7da6$var$parseOptions;
 
 
-var $8e8ea8b9b5888212$exports = {};
+var $74f5f5cee4f3f8a9$exports = {};
 'use strict';
-const $8e8ea8b9b5888212$var$numeric = /^[0-9]+$/;
-const $8e8ea8b9b5888212$var$compareIdentifiers = (a, b)=>{
+const $74f5f5cee4f3f8a9$var$numeric = /^[0-9]+$/;
+const $74f5f5cee4f3f8a9$var$compareIdentifiers = (a, b)=>{
     if (typeof a === 'number' && typeof b === 'number') return a === b ? 0 : a < b ? -1 : 1;
-    const anum = $8e8ea8b9b5888212$var$numeric.test(a);
-    const bnum = $8e8ea8b9b5888212$var$numeric.test(b);
+    const anum = $74f5f5cee4f3f8a9$var$numeric.test(a);
+    const bnum = $74f5f5cee4f3f8a9$var$numeric.test(b);
     if (anum && bnum) {
         a = +a;
         b = +b;
     }
     return a === b ? 0 : anum && !bnum ? -1 : bnum && !anum ? 1 : a < b ? -1 : 1;
 };
-const $8e8ea8b9b5888212$var$rcompareIdentifiers = (a, b)=>$8e8ea8b9b5888212$var$compareIdentifiers(b, a);
-$8e8ea8b9b5888212$exports = {
-    compareIdentifiers: $8e8ea8b9b5888212$var$compareIdentifiers,
-    rcompareIdentifiers: $8e8ea8b9b5888212$var$rcompareIdentifiers
+const $74f5f5cee4f3f8a9$var$rcompareIdentifiers = (a, b)=>$74f5f5cee4f3f8a9$var$compareIdentifiers(b, a);
+$74f5f5cee4f3f8a9$exports = {
+    compareIdentifiers: $74f5f5cee4f3f8a9$var$compareIdentifiers,
+    rcompareIdentifiers: $74f5f5cee4f3f8a9$var$rcompareIdentifiers
 };
 
 
-var $21f7971eeab3bc0c$require$compareIdentifiers = $8e8ea8b9b5888212$exports.compareIdentifiers;
-const $21f7971eeab3bc0c$var$isPrereleaseIdentifier = (prerelease, identifier)=>{
+var $6c372f01b88a20b2$require$compareIdentifiers = $74f5f5cee4f3f8a9$exports.compareIdentifiers;
+const $6c372f01b88a20b2$var$isPrereleaseIdentifier = (prerelease, identifier)=>{
     const identifiers = identifier.split('.');
     if (identifiers.length > prerelease.length) return false;
     for(let i = 0; i < identifiers.length; i++){
-        if ($21f7971eeab3bc0c$require$compareIdentifiers(prerelease[i], identifiers[i]) !== 0) return false;
+        if ($6c372f01b88a20b2$require$compareIdentifiers(prerelease[i], identifiers[i]) !== 0) return false;
     }
     return true;
 };
-class $21f7971eeab3bc0c$var$SemVer {
+class $6c372f01b88a20b2$var$SemVer {
     constructor(version, options){
-        options = $067aa121efc78f83$exports(options);
-        if (version instanceof $21f7971eeab3bc0c$var$SemVer) {
+        options = $f21a839c3ddc7da6$exports(options);
+        if (version instanceof $6c372f01b88a20b2$var$SemVer) {
             if (version.loose === !!options.loose && version.includePrerelease === !!options.includePrerelease) return version;
             else version = version.version;
         } else if (typeof version !== 'string') throw new TypeError(`Invalid version. Must be a string. Got type "${typeof version}".`);
-        if (version.length > $21f7971eeab3bc0c$require$MAX_LENGTH) throw new TypeError(`version is longer than ${$21f7971eeab3bc0c$require$MAX_LENGTH} characters`);
-        $dvl3O('SemVer', version, options);
+        if (version.length > $6c372f01b88a20b2$require$MAX_LENGTH) throw new TypeError(`version is longer than ${$6c372f01b88a20b2$require$MAX_LENGTH} characters`);
+        $5i3Xb('SemVer', version, options);
         this.options = options;
         this.loose = !!options.loose;
         // this isn't actually relevant for versions, but keep it so that we
         // don't run into trouble passing this.options around.
         this.includePrerelease = !!options.includePrerelease;
-        const m = version.trim().match(options.loose ? $21f7971eeab3bc0c$require$re[$21f7971eeab3bc0c$require$t.LOOSE] : $21f7971eeab3bc0c$require$re[$21f7971eeab3bc0c$require$t.FULL]);
+        const m = version.trim().match(options.loose ? $6c372f01b88a20b2$require$re[$6c372f01b88a20b2$require$t.LOOSE] : $6c372f01b88a20b2$require$re[$6c372f01b88a20b2$require$t.FULL]);
         if (!m) throw new TypeError(`Invalid Version: ${version}`);
         this.raw = version;
         // these are actually numbers
         this.major = +m[1];
         this.minor = +m[2];
         this.patch = +m[3];
-        if (this.major > $21f7971eeab3bc0c$require$MAX_SAFE_INTEGER || this.major < 0) throw new TypeError('Invalid major version');
-        if (this.minor > $21f7971eeab3bc0c$require$MAX_SAFE_INTEGER || this.minor < 0) throw new TypeError('Invalid minor version');
-        if (this.patch > $21f7971eeab3bc0c$require$MAX_SAFE_INTEGER || this.patch < 0) throw new TypeError('Invalid patch version');
+        if (this.major > $6c372f01b88a20b2$require$MAX_SAFE_INTEGER || this.major < 0) throw new TypeError('Invalid major version');
+        if (this.minor > $6c372f01b88a20b2$require$MAX_SAFE_INTEGER || this.minor < 0) throw new TypeError('Invalid minor version');
+        if (this.patch > $6c372f01b88a20b2$require$MAX_SAFE_INTEGER || this.patch < 0) throw new TypeError('Invalid patch version');
         // numberify any prerelease numeric ids
         if (!m[4]) this.prerelease = [];
         else this.prerelease = m[4].split('.').map((id)=>{
             if (/^[0-9]+$/.test(id)) {
                 const num = +id;
-                if (num >= 0 && num < $21f7971eeab3bc0c$require$MAX_SAFE_INTEGER) return num;
+                if (num >= 0 && num < $6c372f01b88a20b2$require$MAX_SAFE_INTEGER) return num;
             }
             return id;
         });
@@ -23951,16 +23951,16 @@ class $21f7971eeab3bc0c$var$SemVer {
         return this.version;
     }
     compare(other) {
-        $dvl3O('SemVer.compare', this.version, this.options, other);
-        if (!(other instanceof $21f7971eeab3bc0c$var$SemVer)) {
+        $5i3Xb('SemVer.compare', this.version, this.options, other);
+        if (!(other instanceof $6c372f01b88a20b2$var$SemVer)) {
             if (typeof other === 'string' && other === this.version) return 0;
-            other = new $21f7971eeab3bc0c$var$SemVer(other, this.options);
+            other = new $6c372f01b88a20b2$var$SemVer(other, this.options);
         }
         if (other.version === this.version) return 0;
         return this.compareMain(other) || this.comparePre(other);
     }
     compareMain(other) {
-        if (!(other instanceof $21f7971eeab3bc0c$var$SemVer)) other = new $21f7971eeab3bc0c$var$SemVer(other, this.options);
+        if (!(other instanceof $6c372f01b88a20b2$var$SemVer)) other = new $6c372f01b88a20b2$var$SemVer(other, this.options);
         if (this.major < other.major) return -1;
         if (this.major > other.major) return 1;
         if (this.minor < other.minor) return -1;
@@ -23970,7 +23970,7 @@ class $21f7971eeab3bc0c$var$SemVer {
         return 0;
     }
     comparePre(other) {
-        if (!(other instanceof $21f7971eeab3bc0c$var$SemVer)) other = new $21f7971eeab3bc0c$var$SemVer(other, this.options);
+        if (!(other instanceof $6c372f01b88a20b2$var$SemVer)) other = new $6c372f01b88a20b2$var$SemVer(other, this.options);
         // NOT having a prerelease is > having one
         if (this.prerelease.length && !other.prerelease.length) return -1;
         else if (!this.prerelease.length && other.prerelease.length) return 1;
@@ -23979,26 +23979,26 @@ class $21f7971eeab3bc0c$var$SemVer {
         do {
             const a = this.prerelease[i];
             const b = other.prerelease[i];
-            $dvl3O('prerelease compare', i, a, b);
+            $5i3Xb('prerelease compare', i, a, b);
             if (a === undefined && b === undefined) return 0;
             else if (b === undefined) return 1;
             else if (a === undefined) return -1;
             else if (a === b) continue;
-            else return $21f7971eeab3bc0c$require$compareIdentifiers(a, b);
+            else return $6c372f01b88a20b2$require$compareIdentifiers(a, b);
         }while (++i);
     }
     compareBuild(other) {
-        if (!(other instanceof $21f7971eeab3bc0c$var$SemVer)) other = new $21f7971eeab3bc0c$var$SemVer(other, this.options);
+        if (!(other instanceof $6c372f01b88a20b2$var$SemVer)) other = new $6c372f01b88a20b2$var$SemVer(other, this.options);
         let i = 0;
         do {
             const a = this.build[i];
             const b = other.build[i];
-            $dvl3O('build compare', i, a, b);
+            $5i3Xb('build compare', i, a, b);
             if (a === undefined && b === undefined) return 0;
             else if (b === undefined) return 1;
             else if (a === undefined) return -1;
             else if (a === b) continue;
-            else return $21f7971eeab3bc0c$require$compareIdentifiers(a, b);
+            else return $6c372f01b88a20b2$require$compareIdentifiers(a, b);
         }while (++i);
     }
     // preminor will bump the version up to the next minor release, and immediately
@@ -24008,7 +24008,7 @@ class $21f7971eeab3bc0c$var$SemVer {
             if (!identifier && identifierBase === false) throw new Error('invalid increment argument: identifier is empty');
             // Avoid an invalid semver results
             if (identifier) {
-                const match = `-${identifier}`.match(this.options.loose ? $21f7971eeab3bc0c$require$re[$21f7971eeab3bc0c$require$t.PRERELEASELOOSE] : $21f7971eeab3bc0c$require$re[$21f7971eeab3bc0c$require$t.PRERELEASE]);
+                const match = `-${identifier}`.match(this.options.loose ? $6c372f01b88a20b2$require$re[$6c372f01b88a20b2$require$t.PRERELEASELOOSE] : $6c372f01b88a20b2$require$re[$6c372f01b88a20b2$require$t.PRERELEASE]);
                 if (!match || match[1] !== identifier) throw new Error(`invalid identifier: ${identifier}`);
             }
         }
@@ -24101,7 +24101,7 @@ class $21f7971eeab3bc0c$var$SemVer {
                         if (identifierBase === false) prerelease = [
                             identifier
                         ];
-                        if ($21f7971eeab3bc0c$var$isPrereleaseIdentifier(this.prerelease, identifier)) {
+                        if ($6c372f01b88a20b2$var$isPrereleaseIdentifier(this.prerelease, identifier)) {
                             const prereleaseBase = this.prerelease[identifier.split('.').length];
                             if (isNaN(prereleaseBase)) this.prerelease = prerelease;
                         } else this.prerelease = prerelease;
@@ -24116,69 +24116,69 @@ class $21f7971eeab3bc0c$var$SemVer {
         return this;
     }
 }
-$21f7971eeab3bc0c$exports = $21f7971eeab3bc0c$var$SemVer;
+$6c372f01b88a20b2$exports = $6c372f01b88a20b2$var$SemVer;
 
 
 
-var $b6ebadaa41741ffb$exports = {};
+var $8dac5ee06632dbbf$exports = {};
 'use strict';
 
-const $b6ebadaa41741ffb$var$parse = (version, options, throwErrors = false)=>{
-    if (version instanceof $21f7971eeab3bc0c$exports) return version;
+const $8dac5ee06632dbbf$var$parse = (version, options, throwErrors = false)=>{
+    if (version instanceof $6c372f01b88a20b2$exports) return version;
     try {
-        return new $21f7971eeab3bc0c$exports(version, options);
+        return new $6c372f01b88a20b2$exports(version, options);
     } catch (er) {
         if (!throwErrors) return null;
         throw er;
     }
 };
-$b6ebadaa41741ffb$exports = $b6ebadaa41741ffb$var$parse;
+$8dac5ee06632dbbf$exports = $8dac5ee06632dbbf$var$parse;
 
 
-var $5a2261787396d98f$exports = {};
+var $94a025bfe0b0e338$exports = {};
 'use strict';
 
-const $5a2261787396d98f$var$valid = (version, options)=>{
-    const v = $b6ebadaa41741ffb$exports(version, options);
+const $94a025bfe0b0e338$var$valid = (version, options)=>{
+    const v = $8dac5ee06632dbbf$exports(version, options);
     return v ? v.version : null;
 };
-$5a2261787396d98f$exports = $5a2261787396d98f$var$valid;
+$94a025bfe0b0e338$exports = $94a025bfe0b0e338$var$valid;
 
 
-var $92dcef9d75d3ee49$exports = {};
+var $aa3413a0dde9a0a1$exports = {};
 'use strict';
 
-const $92dcef9d75d3ee49$var$clean = (version, options)=>{
-    const s = $b6ebadaa41741ffb$exports(version.trim().replace(/^[=v]+/, ''), options);
+const $aa3413a0dde9a0a1$var$clean = (version, options)=>{
+    const s = $8dac5ee06632dbbf$exports(version.trim().replace(/^[=v]+/, ''), options);
     return s ? s.version : null;
 };
-$92dcef9d75d3ee49$exports = $92dcef9d75d3ee49$var$clean;
+$aa3413a0dde9a0a1$exports = $aa3413a0dde9a0a1$var$clean;
 
 
-var $c2512d0d2fe796ac$exports = {};
+var $8d9a26ec08bdb707$exports = {};
 'use strict';
 
-const $c2512d0d2fe796ac$var$inc = (version, release, options, identifier, identifierBase)=>{
+const $8d9a26ec08bdb707$var$inc = (version, release, options, identifier, identifierBase)=>{
     if (typeof options === 'string') {
         identifierBase = identifier;
         identifier = options;
         options = undefined;
     }
     try {
-        return new $21f7971eeab3bc0c$exports(version instanceof $21f7971eeab3bc0c$exports ? version.version : version, options).inc(release, identifier, identifierBase).version;
+        return new $6c372f01b88a20b2$exports(version instanceof $6c372f01b88a20b2$exports ? version.version : version, options).inc(release, identifier, identifierBase).version;
     } catch (er) {
         return null;
     }
 };
-$c2512d0d2fe796ac$exports = $c2512d0d2fe796ac$var$inc;
+$8d9a26ec08bdb707$exports = $8d9a26ec08bdb707$var$inc;
 
 
-var $3a169a93ea32e06d$exports = {};
+var $4392cecd1dd462ca$exports = {};
 'use strict';
 
-const $3a169a93ea32e06d$var$diff = (version1, version2)=>{
-    const v1 = $b6ebadaa41741ffb$exports(version1, null, true);
-    const v2 = $b6ebadaa41741ffb$exports(version2, null, true);
+const $4392cecd1dd462ca$var$diff = (version1, version2)=>{
+    const v1 = $8dac5ee06632dbbf$exports(version1, null, true);
+    const v2 = $8dac5ee06632dbbf$exports(version2, null, true);
     const comparison = v1.compare(v2);
     if (comparison === 0) return null;
     const v1Higher = comparison > 0;
@@ -24208,129 +24208,129 @@ const $3a169a93ea32e06d$var$diff = (version1, version2)=>{
     // high and low are prereleases
     return 'prerelease';
 };
-$3a169a93ea32e06d$exports = $3a169a93ea32e06d$var$diff;
+$4392cecd1dd462ca$exports = $4392cecd1dd462ca$var$diff;
 
 
-var $344827c2f8a28520$exports = {};
+var $faba94fd1b5ac998$exports = {};
 'use strict';
 
-const $344827c2f8a28520$var$major = (a, loose)=>new $21f7971eeab3bc0c$exports(a, loose).major;
-$344827c2f8a28520$exports = $344827c2f8a28520$var$major;
+const $faba94fd1b5ac998$var$major = (a, loose)=>new $6c372f01b88a20b2$exports(a, loose).major;
+$faba94fd1b5ac998$exports = $faba94fd1b5ac998$var$major;
 
 
-var $3dc8477bc2ff435c$exports = {};
+var $67a093229859bdb0$exports = {};
 'use strict';
 
-const $3dc8477bc2ff435c$var$minor = (a, loose)=>new $21f7971eeab3bc0c$exports(a, loose).minor;
-$3dc8477bc2ff435c$exports = $3dc8477bc2ff435c$var$minor;
+const $67a093229859bdb0$var$minor = (a, loose)=>new $6c372f01b88a20b2$exports(a, loose).minor;
+$67a093229859bdb0$exports = $67a093229859bdb0$var$minor;
 
 
-var $e41214f38b04b951$exports = {};
+var $418889e9a7f04767$exports = {};
 'use strict';
 
-const $e41214f38b04b951$var$patch = (a, loose)=>new $21f7971eeab3bc0c$exports(a, loose).patch;
-$e41214f38b04b951$exports = $e41214f38b04b951$var$patch;
+const $418889e9a7f04767$var$patch = (a, loose)=>new $6c372f01b88a20b2$exports(a, loose).patch;
+$418889e9a7f04767$exports = $418889e9a7f04767$var$patch;
 
 
-var $f1099b263fbe91bc$exports = {};
+var $f856b83e96e8f963$exports = {};
 'use strict';
 
-const $f1099b263fbe91bc$var$prerelease = (version, options)=>{
-    const parsed = $b6ebadaa41741ffb$exports(version, options);
+const $f856b83e96e8f963$var$prerelease = (version, options)=>{
+    const parsed = $8dac5ee06632dbbf$exports(version, options);
     return parsed && parsed.prerelease.length ? parsed.prerelease : null;
 };
-$f1099b263fbe91bc$exports = $f1099b263fbe91bc$var$prerelease;
+$f856b83e96e8f963$exports = $f856b83e96e8f963$var$prerelease;
 
 
-var $f6f88307ee5d5ad8$exports = {};
+var $141cfddfeed8413d$exports = {};
 'use strict';
 
-const $f6f88307ee5d5ad8$var$compare = (a, b, loose)=>new $21f7971eeab3bc0c$exports(a, loose).compare(new $21f7971eeab3bc0c$exports(b, loose));
-$f6f88307ee5d5ad8$exports = $f6f88307ee5d5ad8$var$compare;
+const $141cfddfeed8413d$var$compare = (a, b, loose)=>new $6c372f01b88a20b2$exports(a, loose).compare(new $6c372f01b88a20b2$exports(b, loose));
+$141cfddfeed8413d$exports = $141cfddfeed8413d$var$compare;
 
 
-var $e12e88d7ebbb9426$exports = {};
+var $fe4733cd9e2b6e46$exports = {};
 'use strict';
 
-const $e12e88d7ebbb9426$var$rcompare = (a, b, loose)=>$f6f88307ee5d5ad8$exports(b, a, loose);
-$e12e88d7ebbb9426$exports = $e12e88d7ebbb9426$var$rcompare;
+const $fe4733cd9e2b6e46$var$rcompare = (a, b, loose)=>$141cfddfeed8413d$exports(b, a, loose);
+$fe4733cd9e2b6e46$exports = $fe4733cd9e2b6e46$var$rcompare;
 
 
-var $b8546e4df8d84a4f$exports = {};
+var $e92972dd79674e96$exports = {};
 'use strict';
 
-const $b8546e4df8d84a4f$var$compareLoose = (a, b)=>$f6f88307ee5d5ad8$exports(a, b, true);
-$b8546e4df8d84a4f$exports = $b8546e4df8d84a4f$var$compareLoose;
+const $e92972dd79674e96$var$compareLoose = (a, b)=>$141cfddfeed8413d$exports(a, b, true);
+$e92972dd79674e96$exports = $e92972dd79674e96$var$compareLoose;
 
 
-var $6a5f71ba1642e5fb$exports = {};
+var $7f569957101287bc$exports = {};
 'use strict';
 
-const $6a5f71ba1642e5fb$var$compareBuild = (a, b, loose)=>{
-    const versionA = new $21f7971eeab3bc0c$exports(a, loose);
-    const versionB = new $21f7971eeab3bc0c$exports(b, loose);
+const $7f569957101287bc$var$compareBuild = (a, b, loose)=>{
+    const versionA = new $6c372f01b88a20b2$exports(a, loose);
+    const versionB = new $6c372f01b88a20b2$exports(b, loose);
     return versionA.compare(versionB) || versionA.compareBuild(versionB);
 };
-$6a5f71ba1642e5fb$exports = $6a5f71ba1642e5fb$var$compareBuild;
+$7f569957101287bc$exports = $7f569957101287bc$var$compareBuild;
 
 
-var $08cabc75cc5e048c$exports = {};
+var $76011fba3042e569$exports = {};
 'use strict';
 
-const $08cabc75cc5e048c$var$sort = (list, loose)=>list.sort((a, b)=>$6a5f71ba1642e5fb$exports(a, b, loose));
-$08cabc75cc5e048c$exports = $08cabc75cc5e048c$var$sort;
+const $76011fba3042e569$var$sort = (list, loose)=>list.sort((a, b)=>$7f569957101287bc$exports(a, b, loose));
+$76011fba3042e569$exports = $76011fba3042e569$var$sort;
 
 
-var $2af6f72907183252$exports = {};
+var $46e6e0e5592021f4$exports = {};
 'use strict';
 
-const $2af6f72907183252$var$rsort = (list, loose)=>list.sort((a, b)=>$6a5f71ba1642e5fb$exports(b, a, loose));
-$2af6f72907183252$exports = $2af6f72907183252$var$rsort;
+const $46e6e0e5592021f4$var$rsort = (list, loose)=>list.sort((a, b)=>$7f569957101287bc$exports(b, a, loose));
+$46e6e0e5592021f4$exports = $46e6e0e5592021f4$var$rsort;
 
 
-var $605af63b3c607924$exports = {};
+var $f36ad7052edb25ac$exports = {};
 'use strict';
 
-const $605af63b3c607924$var$gt = (a, b, loose)=>$f6f88307ee5d5ad8$exports(a, b, loose) > 0;
-$605af63b3c607924$exports = $605af63b3c607924$var$gt;
+const $f36ad7052edb25ac$var$gt = (a, b, loose)=>$141cfddfeed8413d$exports(a, b, loose) > 0;
+$f36ad7052edb25ac$exports = $f36ad7052edb25ac$var$gt;
 
 
-var $401241980f813d4e$exports = {};
+var $9e0f4c858c764c8f$exports = {};
 'use strict';
 
-const $401241980f813d4e$var$lt = (a, b, loose)=>$f6f88307ee5d5ad8$exports(a, b, loose) < 0;
-$401241980f813d4e$exports = $401241980f813d4e$var$lt;
+const $9e0f4c858c764c8f$var$lt = (a, b, loose)=>$141cfddfeed8413d$exports(a, b, loose) < 0;
+$9e0f4c858c764c8f$exports = $9e0f4c858c764c8f$var$lt;
 
 
-var $61774bda2a191b2f$exports = {};
+var $24db49ef0624e239$exports = {};
 'use strict';
 
-const $61774bda2a191b2f$var$eq = (a, b, loose)=>$f6f88307ee5d5ad8$exports(a, b, loose) === 0;
-$61774bda2a191b2f$exports = $61774bda2a191b2f$var$eq;
+const $24db49ef0624e239$var$eq = (a, b, loose)=>$141cfddfeed8413d$exports(a, b, loose) === 0;
+$24db49ef0624e239$exports = $24db49ef0624e239$var$eq;
 
 
-var $761b3aa9a59ac84b$exports = {};
+var $0bc0e343e5e749e0$exports = {};
 'use strict';
 
-const $761b3aa9a59ac84b$var$neq = (a, b, loose)=>$f6f88307ee5d5ad8$exports(a, b, loose) !== 0;
-$761b3aa9a59ac84b$exports = $761b3aa9a59ac84b$var$neq;
+const $0bc0e343e5e749e0$var$neq = (a, b, loose)=>$141cfddfeed8413d$exports(a, b, loose) !== 0;
+$0bc0e343e5e749e0$exports = $0bc0e343e5e749e0$var$neq;
 
 
-var $654dd8b17bc8fdbb$exports = {};
+var $1436acd3e03a5861$exports = {};
 'use strict';
 
-const $654dd8b17bc8fdbb$var$gte = (a, b, loose)=>$f6f88307ee5d5ad8$exports(a, b, loose) >= 0;
-$654dd8b17bc8fdbb$exports = $654dd8b17bc8fdbb$var$gte;
+const $1436acd3e03a5861$var$gte = (a, b, loose)=>$141cfddfeed8413d$exports(a, b, loose) >= 0;
+$1436acd3e03a5861$exports = $1436acd3e03a5861$var$gte;
 
 
-var $1af5121ee0e5df8c$exports = {};
+var $0407f55097fa83b8$exports = {};
 'use strict';
 
-const $1af5121ee0e5df8c$var$lte = (a, b, loose)=>$f6f88307ee5d5ad8$exports(a, b, loose) <= 0;
-$1af5121ee0e5df8c$exports = $1af5121ee0e5df8c$var$lte;
+const $0407f55097fa83b8$var$lte = (a, b, loose)=>$141cfddfeed8413d$exports(a, b, loose) <= 0;
+$0407f55097fa83b8$exports = $0407f55097fa83b8$var$lte;
 
 
-var $2194cfae8f4379ac$exports = {};
+var $3cdf77497331d672$exports = {};
 'use strict';
 
 
@@ -24338,7 +24338,7 @@ var $2194cfae8f4379ac$exports = {};
 
 
 
-const $2194cfae8f4379ac$var$cmp = (a, op, b, loose)=>{
+const $3cdf77497331d672$var$cmp = (a, op, b, loose)=>{
     switch(op){
         case '===':
             if (typeof a === 'object') a = a.version;
@@ -24351,39 +24351,39 @@ const $2194cfae8f4379ac$var$cmp = (a, op, b, loose)=>{
         case '':
         case '=':
         case '==':
-            return $61774bda2a191b2f$exports(a, b, loose);
+            return $24db49ef0624e239$exports(a, b, loose);
         case '!=':
-            return $761b3aa9a59ac84b$exports(a, b, loose);
+            return $0bc0e343e5e749e0$exports(a, b, loose);
         case '>':
-            return $605af63b3c607924$exports(a, b, loose);
+            return $f36ad7052edb25ac$exports(a, b, loose);
         case '>=':
-            return $654dd8b17bc8fdbb$exports(a, b, loose);
+            return $1436acd3e03a5861$exports(a, b, loose);
         case '<':
-            return $401241980f813d4e$exports(a, b, loose);
+            return $9e0f4c858c764c8f$exports(a, b, loose);
         case '<=':
-            return $1af5121ee0e5df8c$exports(a, b, loose);
+            return $0407f55097fa83b8$exports(a, b, loose);
         default:
             throw new TypeError(`Invalid operator: ${op}`);
     }
 };
-$2194cfae8f4379ac$exports = $2194cfae8f4379ac$var$cmp;
+$3cdf77497331d672$exports = $3cdf77497331d672$var$cmp;
 
 
-var $b4167b5348fab01e$exports = {};
+var $c9c2d7a3bc99ff61$exports = {};
 'use strict';
 
 
 
-var $3hxy2 = parcelRequire("3hxy2");
-var $b4167b5348fab01e$require$re = $3hxy2.safeRe;
-var $b4167b5348fab01e$require$t = $3hxy2.t;
-const $b4167b5348fab01e$var$coerce = (version, options)=>{
-    if (version instanceof $21f7971eeab3bc0c$exports) return version;
+var $2mocL = parcelRequire("2mocL");
+var $c9c2d7a3bc99ff61$require$re = $2mocL.safeRe;
+var $c9c2d7a3bc99ff61$require$t = $2mocL.t;
+const $c9c2d7a3bc99ff61$var$coerce = (version, options)=>{
+    if (version instanceof $6c372f01b88a20b2$exports) return version;
     if (typeof version === 'number') version = String(version);
     if (typeof version !== 'string') return null;
     options = options || {};
     let match = null;
-    if (!options.rtl) match = version.match(options.includePrerelease ? $b4167b5348fab01e$require$re[$b4167b5348fab01e$require$t.COERCEFULL] : $b4167b5348fab01e$require$re[$b4167b5348fab01e$require$t.COERCE]);
+    if (!options.rtl) match = version.match(options.includePrerelease ? $c9c2d7a3bc99ff61$require$re[$c9c2d7a3bc99ff61$require$t.COERCEFULL] : $c9c2d7a3bc99ff61$require$re[$c9c2d7a3bc99ff61$require$t.COERCE]);
     else {
         // Find the right-most coercible string that does not share
         // a terminus with a more left-ward coercible string.
@@ -24394,7 +24394,7 @@ const $b4167b5348fab01e$var$coerce = (version, options)=>{
         // Manually set the index so as to pick up overlapping matches.
         // Stop when we get a match that ends at the string end, since no
         // coercible string can be more right-ward without the same terminus.
-        const coerceRtlRegex = options.includePrerelease ? $b4167b5348fab01e$require$re[$b4167b5348fab01e$require$t.COERCERTLFULL] : $b4167b5348fab01e$require$re[$b4167b5348fab01e$require$t.COERCERTL];
+        const coerceRtlRegex = options.includePrerelease ? $c9c2d7a3bc99ff61$require$re[$c9c2d7a3bc99ff61$require$t.COERCERTLFULL] : $c9c2d7a3bc99ff61$require$re[$c9c2d7a3bc99ff61$require$t.COERCERTL];
         let next;
         while((next = coerceRtlRegex.exec(version)) && (!match || match.index + match[0].length !== version.length)){
             if (!match || next.index + next[0].length !== match.index + match[0].length) match = next;
@@ -24409,28 +24409,28 @@ const $b4167b5348fab01e$var$coerce = (version, options)=>{
     const patch = match[4] || '0';
     const prerelease = options.includePrerelease && match[5] ? `-${match[5]}` : '';
     const build = options.includePrerelease && match[6] ? `+${match[6]}` : '';
-    return $b6ebadaa41741ffb$exports(`${major}.${minor}.${patch}${prerelease}${build}`, options);
+    return $8dac5ee06632dbbf$exports(`${major}.${minor}.${patch}${prerelease}${build}`, options);
 };
-$b4167b5348fab01e$exports = $b4167b5348fab01e$var$coerce;
+$c9c2d7a3bc99ff61$exports = $c9c2d7a3bc99ff61$var$coerce;
 
 
-var $6337d8530f730915$exports = {};
+var $46cbda6548e517fa$exports = {};
 'use strict';
 
 
-var $9m0kz = parcelRequire("9m0kz");
+var $g7kfl = parcelRequire("g7kfl");
 
-const $6337d8530f730915$var$truncate = (version, truncation, options)=>{
-    if (!$9m0kz.RELEASE_TYPES.includes(truncation)) return null;
-    const clonedVersion = $6337d8530f730915$var$cloneInputVersion(version, options);
-    return clonedVersion && $6337d8530f730915$var$doTruncation(clonedVersion, truncation);
+const $46cbda6548e517fa$var$truncate = (version, truncation, options)=>{
+    if (!$g7kfl.RELEASE_TYPES.includes(truncation)) return null;
+    const clonedVersion = $46cbda6548e517fa$var$cloneInputVersion(version, options);
+    return clonedVersion && $46cbda6548e517fa$var$doTruncation(clonedVersion, truncation);
 };
-const $6337d8530f730915$var$cloneInputVersion = (version, options)=>{
-    const versionStringToParse = version instanceof $21f7971eeab3bc0c$exports ? version.version : version;
-    return $b6ebadaa41741ffb$exports(versionStringToParse, options);
+const $46cbda6548e517fa$var$cloneInputVersion = (version, options)=>{
+    const versionStringToParse = version instanceof $6c372f01b88a20b2$exports ? version.version : version;
+    return $8dac5ee06632dbbf$exports(versionStringToParse, options);
 };
-const $6337d8530f730915$var$doTruncation = (version, truncation)=>{
-    if ($6337d8530f730915$var$isPrerelease(truncation)) return version.version;
+const $46cbda6548e517fa$var$doTruncation = (version, truncation)=>{
+    if ($46cbda6548e517fa$var$isPrerelease(truncation)) return version.version;
     version.prerelease = [];
     switch(truncation){
         case 'major':
@@ -24443,68 +24443,68 @@ const $6337d8530f730915$var$doTruncation = (version, truncation)=>{
     }
     return version.format();
 };
-const $6337d8530f730915$var$isPrerelease = (type)=>{
+const $46cbda6548e517fa$var$isPrerelease = (type)=>{
     return type.startsWith('pre');
 };
-$6337d8530f730915$exports = $6337d8530f730915$var$truncate;
+$46cbda6548e517fa$exports = $46cbda6548e517fa$var$truncate;
 
 
-var $9ea678ea1a248c7b$exports = {};
+var $272cdb1e6279d540$exports = {};
 'use strict';
-const $9ea678ea1a248c7b$var$ANY = Symbol('SemVer ANY');
+const $272cdb1e6279d540$var$ANY = Symbol('SemVer ANY');
 // hoisted class for cyclic dependency
-class $9ea678ea1a248c7b$var$Comparator {
+class $272cdb1e6279d540$var$Comparator {
     static get ANY() {
-        return $9ea678ea1a248c7b$var$ANY;
+        return $272cdb1e6279d540$var$ANY;
     }
     constructor(comp, options){
-        options = $067aa121efc78f83$exports(options);
-        if (comp instanceof $9ea678ea1a248c7b$var$Comparator) {
+        options = $f21a839c3ddc7da6$exports(options);
+        if (comp instanceof $272cdb1e6279d540$var$Comparator) {
             if (comp.loose === !!options.loose) return comp;
             else comp = comp.value;
         }
         comp = comp.trim().split(/\s+/).join(' ');
-        $dvl3O('comparator', comp, options);
+        $5i3Xb('comparator', comp, options);
         this.options = options;
         this.loose = !!options.loose;
         this.parse(comp);
-        if (this.semver === $9ea678ea1a248c7b$var$ANY) this.value = '';
+        if (this.semver === $272cdb1e6279d540$var$ANY) this.value = '';
         else this.value = this.operator + this.semver.version;
-        $dvl3O('comp', this);
+        $5i3Xb('comp', this);
     }
     parse(comp) {
-        const r = this.options.loose ? $9ea678ea1a248c7b$require$re[$9ea678ea1a248c7b$require$t.COMPARATORLOOSE] : $9ea678ea1a248c7b$require$re[$9ea678ea1a248c7b$require$t.COMPARATOR];
+        const r = this.options.loose ? $272cdb1e6279d540$require$re[$272cdb1e6279d540$require$t.COMPARATORLOOSE] : $272cdb1e6279d540$require$re[$272cdb1e6279d540$require$t.COMPARATOR];
         const m = comp.match(r);
         if (!m) throw new TypeError(`Invalid comparator: ${comp}`);
         this.operator = m[1] !== undefined ? m[1] : '';
         if (this.operator === '=') this.operator = '';
         // if it literally is just '>' or '' then allow anything.
-        if (!m[2]) this.semver = $9ea678ea1a248c7b$var$ANY;
-        else this.semver = new $21f7971eeab3bc0c$exports(m[2], this.options.loose);
+        if (!m[2]) this.semver = $272cdb1e6279d540$var$ANY;
+        else this.semver = new $6c372f01b88a20b2$exports(m[2], this.options.loose);
     }
     toString() {
         return this.value;
     }
     test(version) {
-        $dvl3O('Comparator.test', version, this.options.loose);
-        if (this.semver === $9ea678ea1a248c7b$var$ANY || version === $9ea678ea1a248c7b$var$ANY) return true;
+        $5i3Xb('Comparator.test', version, this.options.loose);
+        if (this.semver === $272cdb1e6279d540$var$ANY || version === $272cdb1e6279d540$var$ANY) return true;
         if (typeof version === 'string') try {
-            version = new $21f7971eeab3bc0c$exports(version, this.options);
+            version = new $6c372f01b88a20b2$exports(version, this.options);
         } catch (er) {
             return false;
         }
-        return $2194cfae8f4379ac$exports(version, this.operator, this.semver, this.options);
+        return $3cdf77497331d672$exports(version, this.operator, this.semver, this.options);
     }
     intersects(comp, options) {
-        if (!(comp instanceof $9ea678ea1a248c7b$var$Comparator)) throw new TypeError('a Comparator is required');
+        if (!(comp instanceof $272cdb1e6279d540$var$Comparator)) throw new TypeError('a Comparator is required');
         if (this.operator === '') {
             if (this.value === '') return true;
-            return new $e94468fbca9194e9$exports(comp.value, options).test(this.value);
+            return new $fdcbe1790ffdd24a$exports(comp.value, options).test(this.value);
         } else if (comp.operator === '') {
             if (comp.value === '') return true;
-            return new $e94468fbca9194e9$exports(this.value, options).test(comp.semver);
+            return new $fdcbe1790ffdd24a$exports(this.value, options).test(comp.semver);
         }
-        options = $067aa121efc78f83$exports(options);
+        options = $f21a839c3ddc7da6$exports(options);
         // Special cases where nothing can possibly be lower
         if (options.includePrerelease && (this.value === '<0.0.0-0' || comp.value === '<0.0.0-0')) return false;
         if (!options.includePrerelease && (this.value.startsWith('<0.0.0') || comp.value.startsWith('<0.0.0'))) return false;
@@ -24515,34 +24515,34 @@ class $9ea678ea1a248c7b$var$Comparator {
         // same SemVer and both sides are inclusive (<= or >=)
         if (this.semver.version === comp.semver.version && this.operator.includes('=') && comp.operator.includes('=')) return true;
         // opposite directions less than
-        if ($2194cfae8f4379ac$exports(this.semver, '<', comp.semver, options) && this.operator.startsWith('>') && comp.operator.startsWith('<')) return true;
+        if ($3cdf77497331d672$exports(this.semver, '<', comp.semver, options) && this.operator.startsWith('>') && comp.operator.startsWith('<')) return true;
         // opposite directions greater than
-        if ($2194cfae8f4379ac$exports(this.semver, '>', comp.semver, options) && this.operator.startsWith('<') && comp.operator.startsWith('>')) return true;
+        if ($3cdf77497331d672$exports(this.semver, '>', comp.semver, options) && this.operator.startsWith('<') && comp.operator.startsWith('>')) return true;
         return false;
     }
 }
-$9ea678ea1a248c7b$exports = $9ea678ea1a248c7b$var$Comparator;
+$272cdb1e6279d540$exports = $272cdb1e6279d540$var$Comparator;
 
 
-var $3hxy2 = parcelRequire("3hxy2");
-var $9ea678ea1a248c7b$require$re = $3hxy2.safeRe;
-var $9ea678ea1a248c7b$require$t = $3hxy2.t;
+var $2mocL = parcelRequire("2mocL");
+var $272cdb1e6279d540$require$re = $2mocL.safeRe;
+var $272cdb1e6279d540$require$t = $2mocL.t;
 
 
-var $dvl3O = parcelRequire("dvl3O");
+var $5i3Xb = parcelRequire("5i3Xb");
 
-var $e94468fbca9194e9$exports = {};
+var $fdcbe1790ffdd24a$exports = {};
 'use strict';
-const $e94468fbca9194e9$var$SPACE_CHARACTERS = /\s+/g;
+const $fdcbe1790ffdd24a$var$SPACE_CHARACTERS = /\s+/g;
 // hoisted class for cyclic dependency
-class $e94468fbca9194e9$var$Range {
+class $fdcbe1790ffdd24a$var$Range {
     constructor(range, options){
-        options = $067aa121efc78f83$exports(options);
-        if (range instanceof $e94468fbca9194e9$var$Range) {
+        options = $f21a839c3ddc7da6$exports(options);
+        if (range instanceof $fdcbe1790ffdd24a$var$Range) {
             if (range.loose === !!options.loose && range.includePrerelease === !!options.includePrerelease) return range;
-            else return new $e94468fbca9194e9$var$Range(range.raw, options);
+            else return new $fdcbe1790ffdd24a$var$Range(range.raw, options);
         }
-        if (range instanceof $9ea678ea1a248c7b$exports) {
+        if (range instanceof $272cdb1e6279d540$exports) {
             // just put it in the set and return
             this.raw = range.value;
             this.set = [
@@ -24559,7 +24559,7 @@ class $e94468fbca9194e9$var$Range {
         // First reduce all whitespace as much as possible so we do not have to rely
         // on potentially slow regexes like \s*. This is then stored and used for
         // future error messages as well.
-        this.raw = range.trim().replace($e94468fbca9194e9$var$SPACE_CHARACTERS, ' ');
+        this.raw = range.trim().replace($fdcbe1790ffdd24a$var$SPACE_CHARACTERS, ' ');
         // First, split on ||
         this.set = this.raw.split('||')// map the range to a 2d array of comparators
         .map((r)=>this.parseRange(r.trim()))// throw out any comparator lists that are empty
@@ -24571,13 +24571,13 @@ class $e94468fbca9194e9$var$Range {
         if (this.set.length > 1) {
             // keep the first one, in case they're all null sets
             const first = this.set[0];
-            this.set = this.set.filter((c)=>!$e94468fbca9194e9$var$isNullSet(c[0]));
+            this.set = this.set.filter((c)=>!$fdcbe1790ffdd24a$var$isNullSet(c[0]));
             if (this.set.length === 0) this.set = [
                 first
             ];
             else if (this.set.length > 1) {
                 // if we have any that are *, then the range is just *
-                for (const c of this.set)if (c.length === 1 && $e94468fbca9194e9$var$isAny(c[0])) {
+                for (const c of this.set)if (c.length === 1 && $fdcbe1790ffdd24a$var$isAny(c[0])) {
                     this.set = [
                         c
                     ];
@@ -24609,44 +24609,44 @@ class $e94468fbca9194e9$var$Range {
     }
     parseRange(range) {
         // strip build metadata so it can't bleed into the version
-        range = range.replace($e94468fbca9194e9$var$BUILDSTRIPRE, '');
+        range = range.replace($fdcbe1790ffdd24a$var$BUILDSTRIPRE, '');
         // memoize range parsing for performance.
         // this is a very hot path, and fully deterministic.
-        const memoOpts = (this.options.includePrerelease && $e94468fbca9194e9$require$FLAG_INCLUDE_PRERELEASE) | (this.options.loose && $e94468fbca9194e9$require$FLAG_LOOSE);
+        const memoOpts = (this.options.includePrerelease && $fdcbe1790ffdd24a$require$FLAG_INCLUDE_PRERELEASE) | (this.options.loose && $fdcbe1790ffdd24a$require$FLAG_LOOSE);
         const memoKey = memoOpts + ':' + range;
-        const cached = $e94468fbca9194e9$var$cache.get(memoKey);
+        const cached = $fdcbe1790ffdd24a$var$cache.get(memoKey);
         if (cached) return cached;
         const loose = this.options.loose;
         // `1.2.3 - 1.2.4` => `>=1.2.3 <=1.2.4`
-        const hr = loose ? $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.HYPHENRANGELOOSE] : $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.HYPHENRANGE];
-        range = range.replace(hr, $e94468fbca9194e9$var$hyphenReplace(this.options.includePrerelease));
-        $dvl3O('hyphen replace', range);
+        const hr = loose ? $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.HYPHENRANGELOOSE] : $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.HYPHENRANGE];
+        range = range.replace(hr, $fdcbe1790ffdd24a$var$hyphenReplace(this.options.includePrerelease));
+        $5i3Xb('hyphen replace', range);
         // `> 1.2.3 < 1.2.5` => `>1.2.3 <1.2.5`
-        range = $8abf0b7ff277dd5b$exports(range);
-        $dvl3O('comparator trim', range);
+        range = $a3dc60150bac072e$exports(range);
+        $5i3Xb('comparator trim', range);
         // `~ 1.2.3` => `~1.2.3`
-        range = range.replace($e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.TILDETRIM], $e94468fbca9194e9$require$tildeTrimReplace);
-        $dvl3O('tilde trim', range);
+        range = range.replace($fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.TILDETRIM], $fdcbe1790ffdd24a$require$tildeTrimReplace);
+        $5i3Xb('tilde trim', range);
         // `^ 1.2.3` => `^1.2.3`
-        range = range.replace($e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.CARETTRIM], $e94468fbca9194e9$require$caretTrimReplace);
-        $dvl3O('caret trim', range);
+        range = range.replace($fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.CARETTRIM], $fdcbe1790ffdd24a$require$caretTrimReplace);
+        $5i3Xb('caret trim', range);
         // At this point, the range is completely trimmed and
         // ready to be split into comparators.
-        let rangeList = range.split(' ').map((comp)=>$e94468fbca9194e9$var$parseComparator(comp, this.options)).join(' ').split(/\s+/)// >=0.0.0 is equivalent to *
-        .map((comp)=>$e94468fbca9194e9$var$replaceGTE0(comp, this.options));
+        let rangeList = range.split(' ').map((comp)=>$fdcbe1790ffdd24a$var$parseComparator(comp, this.options)).join(' ').split(/\s+/)// >=0.0.0 is equivalent to *
+        .map((comp)=>$fdcbe1790ffdd24a$var$replaceGTE0(comp, this.options));
         if (loose) // in loose mode, throw out any that are not valid comparators
         rangeList = rangeList.filter((comp)=>{
-            $dvl3O('loose invalid filter', comp, this.options);
-            return !!comp.match($e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.COMPARATORLOOSE]);
+            $5i3Xb('loose invalid filter', comp, this.options);
+            return !!comp.match($fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.COMPARATORLOOSE]);
         });
-        $dvl3O('range list', rangeList);
+        $5i3Xb('range list', rangeList);
         // if any comparators are the null set, then replace with JUST null set
         // if more than one comparator, remove any * comparators
         // also, don't include the same comparator more than once
         const rangeMap = new Map();
-        const comparators = rangeList.map((comp)=>new $9ea678ea1a248c7b$exports(comp, this.options));
+        const comparators = rangeList.map((comp)=>new $272cdb1e6279d540$exports(comp, this.options));
         for (const comp of comparators){
-            if ($e94468fbca9194e9$var$isNullSet(comp)) return [
+            if ($fdcbe1790ffdd24a$var$isNullSet(comp)) return [
                 comp
             ];
             rangeMap.set(comp.value, comp);
@@ -24655,14 +24655,14 @@ class $e94468fbca9194e9$var$Range {
         const result = [
             ...rangeMap.values()
         ];
-        $e94468fbca9194e9$var$cache.set(memoKey, result);
+        $fdcbe1790ffdd24a$var$cache.set(memoKey, result);
         return result;
     }
     intersects(range, options) {
-        if (!(range instanceof $e94468fbca9194e9$var$Range)) throw new TypeError('a Range is required');
+        if (!(range instanceof $fdcbe1790ffdd24a$var$Range)) throw new TypeError('a Range is required');
         return this.set.some((thisComparators)=>{
-            return $e94468fbca9194e9$var$isSatisfiable(thisComparators, options) && range.set.some((rangeComparators)=>{
-                return $e94468fbca9194e9$var$isSatisfiable(rangeComparators, options) && thisComparators.every((thisComparator)=>{
+            return $fdcbe1790ffdd24a$var$isSatisfiable(thisComparators, options) && range.set.some((rangeComparators)=>{
+                return $fdcbe1790ffdd24a$var$isSatisfiable(rangeComparators, options) && thisComparators.every((thisComparator)=>{
                     return rangeComparators.every((rangeComparator)=>{
                         return thisComparator.intersects(rangeComparator, options);
                     });
@@ -24674,20 +24674,20 @@ class $e94468fbca9194e9$var$Range {
     test(version) {
         if (!version) return false;
         if (typeof version === 'string') try {
-            version = new $21f7971eeab3bc0c$exports(version, this.options);
+            version = new $6c372f01b88a20b2$exports(version, this.options);
         } catch (er) {
             return false;
         }
         for(let i = 0; i < this.set.length; i++){
-            if ($e94468fbca9194e9$var$testSet(this.set[i], version, this.options)) return true;
+            if ($fdcbe1790ffdd24a$var$testSet(this.set[i], version, this.options)) return true;
         }
         return false;
     }
 }
-$e94468fbca9194e9$exports = $e94468fbca9194e9$var$Range;
-var $3f2bc40cb451a5ab$exports = {};
+$fdcbe1790ffdd24a$exports = $fdcbe1790ffdd24a$var$Range;
+var $d03d4de246ee9789$exports = {};
 'use strict';
-class $3f2bc40cb451a5ab$var$LRUCache {
+class $d03d4de246ee9789$var$LRUCache {
     constructor(){
         this.max = 1000;
         this.map = new Map();
@@ -24718,23 +24718,23 @@ class $3f2bc40cb451a5ab$var$LRUCache {
         return this;
     }
 }
-$3f2bc40cb451a5ab$exports = $3f2bc40cb451a5ab$var$LRUCache;
+$d03d4de246ee9789$exports = $d03d4de246ee9789$var$LRUCache;
 
 
-const $e94468fbca9194e9$var$cache = new $3f2bc40cb451a5ab$exports();
+const $fdcbe1790ffdd24a$var$cache = new $d03d4de246ee9789$exports();
 
 
 
-var $dvl3O = parcelRequire("dvl3O");
+var $5i3Xb = parcelRequire("5i3Xb");
 
-var $8abf0b7ff277dd5b$exports = {};
+var $a3dc60150bac072e$exports = {};
 // @ts-check
 'use strict';
 
-var $9m0kz = parcelRequire("9m0kz");
-var $8abf0b7ff277dd5b$require$MAX_LENGTH = $9m0kz.MAX_LENGTH;
-var $8abf0b7ff277dd5b$require$MAX_SAFE_BUILD_LENGTH = $9m0kz.MAX_SAFE_BUILD_LENGTH;
-var $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS = $9m0kz.WHITESPACE_CHARACTERS;
+var $g7kfl = parcelRequire("g7kfl");
+var $a3dc60150bac072e$require$MAX_LENGTH = $g7kfl.MAX_LENGTH;
+var $a3dc60150bac072e$require$MAX_SAFE_BUILD_LENGTH = $g7kfl.MAX_SAFE_BUILD_LENGTH;
+var $a3dc60150bac072e$require$WHITESPACE_CHARACTERS = $g7kfl.WHITESPACE_CHARACTERS;
 /**
  * Remembers the last two rows of digits so their characters need not be reread.
  * Positions start at -1 until a row has been found.
@@ -24745,8 +24745,8 @@ var $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS = $9m0kz.WHITESPACE_CHARACTE
  * @property {number} previousStart The first character of the previous row.
  * @property {number} previousEnd The position after the previous row.
  */ // One entry per UTF-16 code unit keeps membership checks constant-time.
-const $8abf0b7ff277dd5b$var$whitespace = new Uint8Array(0x10000);
-for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277dd5b$var$whitespace[char.charCodeAt(0)] = 1;
+const $a3dc60150bac072e$var$whitespace = new Uint8Array(0x10000);
+for (const char of $a3dc60150bac072e$require$WHITESPACE_CHARACTERS)$a3dc60150bac072e$var$whitespace[char.charCodeAt(0)] = 1;
 /**
  * Checks whether a character is whitespace, like a space, tab, or newline.
  * Looking past the end of the string returns false.
@@ -24755,7 +24755,7 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {boolean} Whether the character is whitespace.
  * @example isWhitespace(' ') // true
  * @example isWhitespace('1') // false
- */ const $8abf0b7ff277dd5b$var$isWhitespace = (char)=>char !== undefined && $8abf0b7ff277dd5b$var$whitespace[char.charCodeAt(0)] === 1;
+ */ const $a3dc60150bac072e$var$isWhitespace = (char)=>char !== undefined && $a3dc60150bac072e$var$whitespace[char.charCodeAt(0)] === 1;
 /**
  * Checks for v, =, or whitespace before the version number.
  * These are historical version prefixes, not range operators:
@@ -24765,7 +24765,7 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {boolean} Whether the character can belong to a version prefix.
  * @example isVersionPrefix('=') // true
  * @example isVersionPrefix('>') // false
- */ const $8abf0b7ff277dd5b$var$isVersionPrefix = (char)=>char === 'v' || char === '=' || $8abf0b7ff277dd5b$var$isWhitespace(char);
+ */ const $a3dc60150bac072e$var$isVersionPrefix = (char)=>char === 'v' || char === '=' || $a3dc60150bac072e$var$isWhitespace(char);
 /**
  * Checks whether a character is one of the digits 0 through 9.
  *
@@ -24773,7 +24773,7 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {boolean} Whether the character is an ASCII digit.
  * @example isDigit('7') // true
  * @example isDigit('.') // false
- */ const $8abf0b7ff277dd5b$var$isDigit = (char)=>char !== undefined && char >= '0' && char <= '9';
+ */ const $a3dc60150bac072e$var$isDigit = (char)=>char !== undefined && char >= '0' && char <= '9';
 /**
  * Checks whether a character is an English letter, uppercase or lowercase.
  *
@@ -24781,7 +24781,7 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {boolean} Whether the character is an ASCII letter.
  * @example isLetter('b') // true
  * @example isLetter('7') // false
- */ const $8abf0b7ff277dd5b$var$isLetter = (char)=>char !== undefined && (char >= 'a' && char <= 'z' || char >= 'A' && char <= 'Z');
+ */ const $a3dc60150bac072e$var$isLetter = (char)=>char !== undefined && (char >= 'a' && char <= 'z' || char >= 'A' && char <= 'Z');
 /**
  * Checks for a letter, digit, or hyphen: the characters allowed inside
  * prerelease and build names such as beta-1.
@@ -24790,7 +24790,7 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {boolean} Whether the character can be part of an identifier.
  * @example isIdentifierCharacter('-') // true
  * @example isIdentifierCharacter('.') // false; dots separate identifiers
- */ const $8abf0b7ff277dd5b$var$isIdentifierCharacter = (char)=>$8abf0b7ff277dd5b$var$isDigit(char) || $8abf0b7ff277dd5b$var$isLetter(char) || char === '-';
+ */ const $a3dc60150bac072e$var$isIdentifierCharacter = (char)=>$a3dc60150bac072e$var$isDigit(char) || $a3dc60150bac072e$var$isLetter(char) || char === '-';
 /**
  * Checks whether a version component can begin here: with a digit or
  * a wildcard such as x, X, or *.
@@ -24799,7 +24799,7 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {boolean} Whether a number or wildcard can start with this character.
  * @example isVersionStart('x') // true
  * @example isVersionStart('v') // false; v belongs to the prefix
- */ const $8abf0b7ff277dd5b$var$isVersionStart = (char)=>$8abf0b7ff277dd5b$var$isDigit(char) || char === 'x' || char === 'X' || char === '*';
+ */ const $a3dc60150bac072e$var$isVersionStart = (char)=>$a3dc60150bac072e$var$isDigit(char) || char === 'x' || char === 'X' || char === '*';
 /**
  * Finds the end of a row of digits, but returns no more than limit digits.
  * Remembers the last two rows so looking at them again does not reread them.
@@ -24811,12 +24811,12 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the matched digits, or start if none match.
  * @example findDigitsEndIndex('123abc', 0, 10, digitRuns) // 3, pointing at a
  * @example findDigitsEndIndex('123abc', 0, 2, digitRuns) // 2, pointing at the unread 3
- */ const $8abf0b7ff277dd5b$var$findDigitsEndIndex = (range, start, limit, digitRuns)=>{
-    if (!$8abf0b7ff277dd5b$var$isDigit(range[start])) return start;
+ */ const $a3dc60150bac072e$var$findDigitsEndIndex = (range, start, limit, digitRuns)=>{
+    if (!$a3dc60150bac072e$var$isDigit(range[start])) return start;
     if (start >= digitRuns.start && start < digitRuns.end) return Math.min(start + limit, digitRuns.end);
     if (start >= digitRuns.previousStart && start < digitRuns.previousEnd) return Math.min(start + limit, digitRuns.previousEnd);
     let end = start + 1;
-    while($8abf0b7ff277dd5b$var$isDigit(range[end]))end++;
+    while($a3dc60150bac072e$var$isDigit(range[end]))end++;
     // A failed full version can rewind from its second run to its first.
     digitRuns.previousStart = digitRuns.start;
     digitRuns.previousEnd = digitRuns.end;
@@ -24835,10 +24835,10 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the matched digits, not their numeric value.
  * @example findVersionNumberEndIndex('012', 0, false, digitRuns) // 1
  * @example findVersionNumberEndIndex('012', 0, true, digitRuns) // 3
- */ const $8abf0b7ff277dd5b$var$findVersionNumberEndIndex = (range, start, loose, digitRuns)=>{
+ */ const $a3dc60150bac072e$var$findVersionNumberEndIndex = (range, start, loose, digitRuns)=>{
     if (!loose && range[start] === '0') return start + 1;
     // Strict syntax allows an initial nonzero digit plus MAX_LENGTH digits.
-    return $8abf0b7ff277dd5b$var$findDigitsEndIndex(range, start, loose ? $8abf0b7ff277dd5b$require$MAX_LENGTH : $8abf0b7ff277dd5b$require$MAX_LENGTH + 1, digitRuns);
+    return $a3dc60150bac072e$var$findDigitsEndIndex(range, start, loose ? $a3dc60150bac072e$require$MAX_LENGTH : $a3dc60150bac072e$require$MAX_LENGTH + 1, digitRuns);
 };
 /**
  * Reads one piece of a prerelease name, such as beta or 1 in beta.1.
@@ -24851,16 +24851,16 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the identifier, or start if none matches.
  * @example findPrereleaseIdentifierEndIndex('beta.1', 0, false, digitRuns) // 4, at the dot
  * @example findPrereleaseIdentifierEndIndex('001beta', 0, false, digitRuns) // 7
- */ const $8abf0b7ff277dd5b$var$findPrereleaseIdentifierEndIndex = (range, start, loose, digitRuns)=>{
-    const digitsEnd = $8abf0b7ff277dd5b$var$findDigitsEndIndex(range, start, $8abf0b7ff277dd5b$require$MAX_LENGTH, digitRuns);
+ */ const $a3dc60150bac072e$var$findPrereleaseIdentifierEndIndex = (range, start, loose, digitRuns)=>{
+    const digitsEnd = $a3dc60150bac072e$var$findDigitsEndIndex(range, start, $a3dc60150bac072e$require$MAX_LENGTH, digitRuns);
     // The legacy regex tries a nonnumeric identifier before a numeric one.
-    if ($8abf0b7ff277dd5b$var$isLetter(range[digitsEnd]) || range[digitsEnd] === '-') {
+    if ($a3dc60150bac072e$var$isLetter(range[digitsEnd]) || range[digitsEnd] === '-') {
         let end = digitsEnd + 1;
-        const limit = end + $8abf0b7ff277dd5b$require$MAX_SAFE_BUILD_LENGTH;
-        while(end < limit && $8abf0b7ff277dd5b$var$isIdentifierCharacter(range[end]))end++;
+        const limit = end + $a3dc60150bac072e$require$MAX_SAFE_BUILD_LENGTH;
+        while(end < limit && $a3dc60150bac072e$var$isIdentifierCharacter(range[end]))end++;
         return end;
     }
-    return $8abf0b7ff277dd5b$var$findVersionNumberEndIndex(range, start, loose, digitRuns);
+    return $a3dc60150bac072e$var$findVersionNumberEndIndex(range, start, loose, digitRuns);
 };
 /**
  * Reads a prerelease suffix such as -beta.1, one dot-separated piece at a time.
@@ -24873,18 +24873,18 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the matched suffix, or start if absent.
  * @example findPrereleaseEndIndex('-beta.1+sha', 0, false, digitRuns) // 7, at the plus
  * @example findPrereleaseEndIndex('beta', 0, false, digitRuns) // 0; no opening hyphen
- */ const $8abf0b7ff277dd5b$var$findPrereleaseEndIndex = (range, start, loose, digitRuns)=>{
+ */ const $a3dc60150bac072e$var$findPrereleaseEndIndex = (range, start, loose, digitRuns)=>{
     const hyphen = range[start] === '-';
     if (!loose && !hyphen) return start;
     const identifierStart = start + (hyphen ? 1 : 0);
-    let end = $8abf0b7ff277dd5b$var$findPrereleaseIdentifierEndIndex(range, identifierStart, loose, digitRuns);
+    let end = $a3dc60150bac072e$var$findPrereleaseIdentifierEndIndex(range, identifierStart, loose, digitRuns);
     if (end === identifierStart) {
         if (!loose || !hyphen) return start;
         // In loose syntax, a lone hyphen can itself be the identifier.
-        end = $8abf0b7ff277dd5b$var$findPrereleaseIdentifierEndIndex(range, start, loose, digitRuns);
+        end = $a3dc60150bac072e$var$findPrereleaseIdentifierEndIndex(range, start, loose, digitRuns);
     }
     while(range[end] === '.'){
-        const next = $8abf0b7ff277dd5b$var$findPrereleaseIdentifierEndIndex(range, end + 1, loose, digitRuns);
+        const next = $a3dc60150bac072e$var$findPrereleaseIdentifierEndIndex(range, end + 1, loose, digitRuns);
         if (next === end + 1) break;
         end = next;
     }
@@ -24899,9 +24899,9 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the identifier, or start if none matches.
  * @example findBuildIdentifierEndIndex('sha.123', 0) // 3, at the dot
  * @example findBuildIdentifierEndIndex('001', 0) // 3; leading zeros are allowed
- */ const $8abf0b7ff277dd5b$var$findBuildIdentifierEndIndex = (range, start)=>{
+ */ const $a3dc60150bac072e$var$findBuildIdentifierEndIndex = (range, start)=>{
     let end = start;
-    while(end - start < $8abf0b7ff277dd5b$require$MAX_SAFE_BUILD_LENGTH && $8abf0b7ff277dd5b$var$isIdentifierCharacter(range[end]))end++;
+    while(end - start < $a3dc60150bac072e$require$MAX_SAFE_BUILD_LENGTH && $a3dc60150bac072e$var$isIdentifierCharacter(range[end]))end++;
     return end;
 };
 /**
@@ -24913,12 +24913,12 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the matched metadata, or start if absent.
  * @example findBuildEndIndex('+sha.123 <2', 0) // 8, at the space
  * @example findBuildEndIndex('+', 0) // 0; a plus sign alone is not a match
- */ const $8abf0b7ff277dd5b$var$findBuildEndIndex = (range, start)=>{
+ */ const $a3dc60150bac072e$var$findBuildEndIndex = (range, start)=>{
     if (range[start] !== '+') return start;
-    let end = $8abf0b7ff277dd5b$var$findBuildIdentifierEndIndex(range, start + 1);
+    let end = $a3dc60150bac072e$var$findBuildIdentifierEndIndex(range, start + 1);
     if (end === start + 1) return start;
     while(range[end] === '.'){
-        const next = $8abf0b7ff277dd5b$var$findBuildIdentifierEndIndex(range, end + 1);
+        const next = $a3dc60150bac072e$var$findBuildIdentifierEndIndex(range, end + 1);
         if (next === end + 1) break;
         end = next;
     }
@@ -24934,10 +24934,10 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the version match, or start if none matches.
  * @example findLooseFullVersionEndIndex('1.2.3-beta+sha <2', 0, digitRuns) // 14
  * @example findLooseFullVersionEndIndex('1.2', 0, digitRuns) // 0; needs three numbers
- */ const $8abf0b7ff277dd5b$var$findLooseFullVersionEndIndex = (range, start, digitRuns)=>{
+ */ const $a3dc60150bac072e$var$findLooseFullVersionEndIndex = (range, start, digitRuns)=>{
     let end = start;
     for(let component = 0; component < 3; component++){
-        const next = $8abf0b7ff277dd5b$var$findVersionNumberEndIndex(range, end, true, digitRuns);
+        const next = $a3dc60150bac072e$var$findVersionNumberEndIndex(range, end, true, digitRuns);
         if (next === end) return start;
         end = next;
         if (component < 2) {
@@ -24945,8 +24945,8 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
             end++;
         }
     }
-    const prereleaseEnd = $8abf0b7ff277dd5b$var$findPrereleaseEndIndex(range, end, true, digitRuns);
-    return $8abf0b7ff277dd5b$var$findBuildEndIndex(range, prereleaseEnd);
+    const prereleaseEnd = $a3dc60150bac072e$var$findPrereleaseEndIndex(range, end, true, digitRuns);
+    return $a3dc60150bac072e$var$findBuildEndIndex(range, prereleaseEnd);
 };
 /**
  * Reads one component of a partial or wildcard version, such as 2 or x in 2.x.
@@ -24958,9 +24958,9 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the component, or start if none matches.
  * @example findPartialVersionComponentEndIndex('2.x', 0, digitRuns) // 1, at the dot
  * @example findPartialVersionComponentEndIndex('2.x', 2, digitRuns) // 3, after x
- */ const $8abf0b7ff277dd5b$var$findPartialVersionComponentEndIndex = (range, start, digitRuns)=>{
-    if ($8abf0b7ff277dd5b$var$isDigit(range[start])) return $8abf0b7ff277dd5b$var$findVersionNumberEndIndex(range, start, false, digitRuns);
-    return $8abf0b7ff277dd5b$var$isVersionStart(range[start]) ? start + 1 : start;
+ */ const $a3dc60150bac072e$var$findPartialVersionComponentEndIndex = (range, start, digitRuns)=>{
+    if ($a3dc60150bac072e$var$isDigit(range[start])) return $a3dc60150bac072e$var$findVersionNumberEndIndex(range, start, false, digitRuns);
+    return $a3dc60150bac072e$var$isVersionStart(range[start]) ? start + 1 : start;
 };
 /**
  * Reads up to three components, allowing forms such as 1, 1.2, or 1.x.
@@ -24972,16 +24972,16 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position after the matched version text.
  * @example findPartialVersionEndIndex('1.x <2', 0, digitRuns) // 3, at the space
  * @example findPartialVersionEndIndex('1.', 0, digitRuns) // 1; the trailing dot is unread
- */ const $8abf0b7ff277dd5b$var$findPartialVersionEndIndex = (range, start, digitRuns)=>{
-    let end = $8abf0b7ff277dd5b$var$findPartialVersionComponentEndIndex(range, start, digitRuns);
+ */ const $a3dc60150bac072e$var$findPartialVersionEndIndex = (range, start, digitRuns)=>{
+    let end = $a3dc60150bac072e$var$findPartialVersionComponentEndIndex(range, start, digitRuns);
     for(let component = 0; component < 2; component++){
         if (range[end] !== '.') return end;
-        const next = $8abf0b7ff277dd5b$var$findPartialVersionComponentEndIndex(range, end + 1, digitRuns);
+        const next = $a3dc60150bac072e$var$findPartialVersionComponentEndIndex(range, end + 1, digitRuns);
         if (next === end + 1) return end;
         end = next;
     }
-    const prereleaseEnd = $8abf0b7ff277dd5b$var$findPrereleaseEndIndex(range, end, false, digitRuns);
-    return $8abf0b7ff277dd5b$var$findBuildEndIndex(range, prereleaseEnd);
+    const prereleaseEnd = $a3dc60150bac072e$var$findPrereleaseEndIndex(range, end, false, digitRuns);
+    return $a3dc60150bac072e$var$findBuildEndIndex(range, prereleaseEnd);
 };
 /**
  * Finds where a version match ends, without deciding whether the range is valid.
@@ -24994,9 +24994,9 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position where scanning the next candidate can resume.
  * @example findVersionEndIndex('1.2.3 <2', 0, digitRuns) // 5, at the space
  * @example findVersionEndIndex('1.x <2', 0, digitRuns) // 3, at the space
- */ const $8abf0b7ff277dd5b$var$findVersionEndIndex = (range, start, digitRuns)=>{
-    const fullVersionEnd = $8abf0b7ff277dd5b$var$findLooseFullVersionEndIndex(range, start, digitRuns);
-    return fullVersionEnd !== start ? fullVersionEnd : $8abf0b7ff277dd5b$var$findPartialVersionEndIndex(range, start, digitRuns);
+ */ const $a3dc60150bac072e$var$findVersionEndIndex = (range, start, digitRuns)=>{
+    const fullVersionEnd = $a3dc60150bac072e$var$findLooseFullVersionEndIndex(range, start, digitRuns);
+    return fullVersionEnd !== start ? fullVersionEnd : $a3dc60150bac072e$var$findPartialVersionEndIndex(range, start, digitRuns);
 };
 /**
  * Finds the one whitespace character the old replacement would remove.
@@ -25008,12 +25008,12 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {number} The position of the removable whitespace, or -1 if absent.
  * @example findRemovableWhitespaceIndex(' > 1', 0) // 2; keep the space at position 0
  * @example findRemovableWhitespaceIndex('>1', 0) // -1
- */ const $8abf0b7ff277dd5b$var$findRemovableWhitespaceIndex = (range, matchStart)=>{
+ */ const $a3dc60150bac072e$var$findRemovableWhitespaceIndex = (range, matchStart)=>{
     let position = matchStart;
-    if ($8abf0b7ff277dd5b$var$isWhitespace(range[position])) position++;
+    if ($a3dc60150bac072e$var$isWhitespace(range[position])) position++;
     if (range[position] === '<' || range[position] === '>') position++;
     if (range[position] === '=') position++;
-    return $8abf0b7ff277dd5b$var$isWhitespace(range[position]) ? position : -1;
+    return $a3dc60150bac072e$var$isWhitespace(range[position]) ? position : -1;
 };
 /**
  * Joins an operator to its version, turning > 1.2.3 into >1.2.3.
@@ -25025,7 +25025,7 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
  * @returns {string} The range with matched operator whitespace removed.
  * @example trimComparatorWhitespace('> 1.2.3 < 2') // '>1.2.3 <2'
  * @example trimComparatorWhitespace('> invalid') // '> invalid'
- */ const $8abf0b7ff277dd5b$var$trimComparatorWhitespace = (range)=>{
+ */ const $a3dc60150bac072e$var$trimComparatorWhitespace = (range)=>{
     let result = '';
     let copyFrom = 0;
     let cursor = 0;
@@ -25038,45 +25038,45 @@ for (const char of $8abf0b7ff277dd5b$require$WHITESPACE_CHARACTERS)$8abf0b7ff277
     while(cursor < range.length){
         const matchStart = cursor;
         if (range[cursor] === '<' || range[cursor] === '>') cursor++;
-        else if (!$8abf0b7ff277dd5b$var$isVersionPrefix(range[cursor]) && !$8abf0b7ff277dd5b$var$isVersionStart(range[cursor])) {
+        else if (!$a3dc60150bac072e$var$isVersionPrefix(range[cursor]) && !$a3dc60150bac072e$var$isVersionStart(range[cursor])) {
             cursor++;
             continue;
         }
         // Consume a v/=/whitespace run once, even when no version follows it.
-        while(cursor < range.length && $8abf0b7ff277dd5b$var$isVersionPrefix(range[cursor]))cursor++;
-        if (!$8abf0b7ff277dd5b$var$isVersionStart(range[cursor])) continue;
-        const whitespacePosition = $8abf0b7ff277dd5b$var$findRemovableWhitespaceIndex(range, matchStart);
+        while(cursor < range.length && $a3dc60150bac072e$var$isVersionPrefix(range[cursor]))cursor++;
+        if (!$a3dc60150bac072e$var$isVersionStart(range[cursor])) continue;
+        const whitespacePosition = $a3dc60150bac072e$var$findRemovableWhitespaceIndex(range, matchStart);
         if (whitespacePosition !== -1) {
             result += range.slice(copyFrom, whitespacePosition);
             copyFrom = whitespacePosition + 1;
         }
         // Skip the entire match, so a prerelease's trailing v cannot be
         // reconsidered as the prefix of another version.
-        cursor = $8abf0b7ff277dd5b$var$findVersionEndIndex(range, cursor, digitRuns);
+        cursor = $a3dc60150bac072e$var$findVersionEndIndex(range, cursor, digitRuns);
     }
     return result + range.slice(copyFrom);
 };
-$8abf0b7ff277dd5b$exports = $8abf0b7ff277dd5b$var$trimComparatorWhitespace;
+$a3dc60150bac072e$exports = $a3dc60150bac072e$var$trimComparatorWhitespace;
 
 
 
-var $3hxy2 = parcelRequire("3hxy2");
-var $e94468fbca9194e9$require$re = $3hxy2.safeRe;
-var $e94468fbca9194e9$require$src = $3hxy2.src;
-var $e94468fbca9194e9$require$t = $3hxy2.t;
-var $e94468fbca9194e9$require$tildeTrimReplace = $3hxy2.tildeTrimReplace;
-var $e94468fbca9194e9$require$caretTrimReplace = $3hxy2.caretTrimReplace;
+var $2mocL = parcelRequire("2mocL");
+var $fdcbe1790ffdd24a$require$re = $2mocL.safeRe;
+var $fdcbe1790ffdd24a$require$src = $2mocL.src;
+var $fdcbe1790ffdd24a$require$t = $2mocL.t;
+var $fdcbe1790ffdd24a$require$tildeTrimReplace = $2mocL.tildeTrimReplace;
+var $fdcbe1790ffdd24a$require$caretTrimReplace = $2mocL.caretTrimReplace;
 
-var $9m0kz = parcelRequire("9m0kz");
-var $e94468fbca9194e9$require$FLAG_INCLUDE_PRERELEASE = $9m0kz.FLAG_INCLUDE_PRERELEASE;
-var $e94468fbca9194e9$require$FLAG_LOOSE = $9m0kz.FLAG_LOOSE;
+var $g7kfl = parcelRequire("g7kfl");
+var $fdcbe1790ffdd24a$require$FLAG_INCLUDE_PRERELEASE = $g7kfl.FLAG_INCLUDE_PRERELEASE;
+var $fdcbe1790ffdd24a$require$FLAG_LOOSE = $g7kfl.FLAG_LOOSE;
 // unbounded global build-metadata stripper used by parseRange
-const $e94468fbca9194e9$var$BUILDSTRIPRE = new RegExp($e94468fbca9194e9$require$src[$e94468fbca9194e9$require$t.BUILD], 'g');
-const $e94468fbca9194e9$var$isNullSet = (c)=>c.value === '<0.0.0-0';
-const $e94468fbca9194e9$var$isAny = (c)=>c.value === '';
+const $fdcbe1790ffdd24a$var$BUILDSTRIPRE = new RegExp($fdcbe1790ffdd24a$require$src[$fdcbe1790ffdd24a$require$t.BUILD], 'g');
+const $fdcbe1790ffdd24a$var$isNullSet = (c)=>c.value === '<0.0.0-0';
+const $fdcbe1790ffdd24a$var$isAny = (c)=>c.value === '';
 // take a set of comparators and determine whether there
 // exists a version which can satisfy it
-const $e94468fbca9194e9$var$isSatisfiable = (comparators, options)=>{
+const $fdcbe1790ffdd24a$var$isSatisfiable = (comparators, options)=>{
     let result = true;
     const remainingComparators = comparators.slice();
     let testComparator = remainingComparators.pop();
@@ -25091,21 +25091,21 @@ const $e94468fbca9194e9$var$isSatisfiable = (comparators, options)=>{
 // comprised of xranges, tildes, stars, and gtlt's at this point.
 // already replaced the hyphen ranges
 // turn into a set of JUST comparators.
-const $e94468fbca9194e9$var$parseComparator = (comp, options)=>{
-    comp = comp.replace($e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.BUILD], '');
-    $dvl3O('comp', comp, options);
-    comp = $e94468fbca9194e9$var$replaceCarets(comp, options);
-    $dvl3O('caret', comp);
-    comp = $e94468fbca9194e9$var$replaceTildes(comp, options);
-    $dvl3O('tildes', comp);
-    comp = $e94468fbca9194e9$var$replaceXRanges(comp, options);
-    $dvl3O('xrange', comp);
-    comp = $e94468fbca9194e9$var$replaceStars(comp, options);
-    $dvl3O('stars', comp);
+const $fdcbe1790ffdd24a$var$parseComparator = (comp, options)=>{
+    comp = comp.replace($fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.BUILD], '');
+    $5i3Xb('comp', comp, options);
+    comp = $fdcbe1790ffdd24a$var$replaceCarets(comp, options);
+    $5i3Xb('caret', comp);
+    comp = $fdcbe1790ffdd24a$var$replaceTildes(comp, options);
+    $5i3Xb('tildes', comp);
+    comp = $fdcbe1790ffdd24a$var$replaceXRanges(comp, options);
+    $5i3Xb('xrange', comp);
+    comp = $fdcbe1790ffdd24a$var$replaceStars(comp, options);
+    $5i3Xb('stars', comp);
     return comp;
 };
-const $e94468fbca9194e9$var$isX = (id)=>!id || id.toLowerCase() === 'x' || id === '*';
-const $e94468fbca9194e9$var$invalidXRangeOrder = (M, m, p)=>$e94468fbca9194e9$var$isX(M) && !$e94468fbca9194e9$var$isX(m) || $e94468fbca9194e9$var$isX(m) && p && !$e94468fbca9194e9$var$isX(p);
+const $fdcbe1790ffdd24a$var$isX = (id)=>!id || id.toLowerCase() === 'x' || id === '*';
+const $fdcbe1790ffdd24a$var$invalidXRangeOrder = (M, m, p)=>$fdcbe1790ffdd24a$var$isX(M) && !$fdcbe1790ffdd24a$var$isX(m) || $fdcbe1790ffdd24a$var$isX(m) && p && !$fdcbe1790ffdd24a$var$isX(p);
 // ~, ~> --> * (any, kinda silly)
 // ~2, ~2.x, ~2.x.x, ~>2, ~>2.x ~>2.x.x --> >=2.0.0 <3.0.0-0
 // ~2.0, ~2.0.x, ~>2.0, ~>2.0.x --> >=2.0.0 <2.1.0-0
@@ -25113,28 +25113,28 @@ const $e94468fbca9194e9$var$invalidXRangeOrder = (M, m, p)=>$e94468fbca9194e9$va
 // ~1.2.3, ~>1.2.3 --> >=1.2.3 <1.3.0-0
 // ~1.2.0, ~>1.2.0 --> >=1.2.0 <1.3.0-0
 // ~0.0.1 --> >=0.0.1 <0.1.0-0
-const $e94468fbca9194e9$var$replaceTildes = (comp, options)=>{
-    return comp.trim().split(/\s+/).map((c)=>$e94468fbca9194e9$var$replaceTilde(c, options)).join(' ');
+const $fdcbe1790ffdd24a$var$replaceTildes = (comp, options)=>{
+    return comp.trim().split(/\s+/).map((c)=>$fdcbe1790ffdd24a$var$replaceTilde(c, options)).join(' ');
 };
-const $e94468fbca9194e9$var$replaceTilde = (comp, options)=>{
-    const r = options.loose ? $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.TILDELOOSE] : $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.TILDE];
+const $fdcbe1790ffdd24a$var$replaceTilde = (comp, options)=>{
+    const r = options.loose ? $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.TILDELOOSE] : $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.TILDE];
     // if we're including prereleases in the match, then the lower bound is
     // -0, the lowest possible prerelease value, just like x-ranges and carets.
     // this keeps `~1.2` equivalent to the `1.2.x` x-range it's documented as.
     const z = options.includePrerelease ? '-0' : '';
     return comp.replace(r, (_, M, m, p, pr)=>{
-        $dvl3O('tilde', comp, _, M, m, p, pr);
+        $5i3Xb('tilde', comp, _, M, m, p, pr);
         let ret;
-        if ($e94468fbca9194e9$var$isX(M)) ret = '';
-        else if ($e94468fbca9194e9$var$isX(m)) ret = `>=${M}.0.0${z} <${+M + 1}.0.0-0`;
-        else if ($e94468fbca9194e9$var$isX(p)) // ~1.2 == >=1.2.0 <1.3.0-0
+        if ($fdcbe1790ffdd24a$var$isX(M)) ret = '';
+        else if ($fdcbe1790ffdd24a$var$isX(m)) ret = `>=${M}.0.0${z} <${+M + 1}.0.0-0`;
+        else if ($fdcbe1790ffdd24a$var$isX(p)) // ~1.2 == >=1.2.0 <1.3.0-0
         ret = `>=${M}.${m}.0${z} <${M}.${+m + 1}.0-0`;
         else if (pr) {
-            $dvl3O('replaceTilde pr', pr);
+            $5i3Xb('replaceTilde pr', pr);
             ret = `>=${M}.${m}.${p}-${pr} <${M}.${+m + 1}.0-0`;
         } else // ~1.2.3 == >=1.2.3 <1.3.0-0
         ret = `>=${M}.${m}.${p} <${M}.${+m + 1}.0-0`;
-        $dvl3O('tilde return', ret);
+        $5i3Xb('tilde return', ret);
         return ret;
     });
 };
@@ -25146,51 +25146,51 @@ const $e94468fbca9194e9$var$replaceTilde = (comp, options)=>{
 // ^1.2.0 --> >=1.2.0 <2.0.0-0
 // ^0.0.1 --> >=0.0.1 <0.0.2-0
 // ^0.1.0 --> >=0.1.0 <0.2.0-0
-const $e94468fbca9194e9$var$replaceCarets = (comp, options)=>{
-    return comp.trim().split(/\s+/).map((c)=>$e94468fbca9194e9$var$replaceCaret(c, options)).join(' ');
+const $fdcbe1790ffdd24a$var$replaceCarets = (comp, options)=>{
+    return comp.trim().split(/\s+/).map((c)=>$fdcbe1790ffdd24a$var$replaceCaret(c, options)).join(' ');
 };
-const $e94468fbca9194e9$var$replaceCaret = (comp, options)=>{
-    $dvl3O('caret', comp, options);
-    const r = options.loose ? $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.CARETLOOSE] : $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.CARET];
+const $fdcbe1790ffdd24a$var$replaceCaret = (comp, options)=>{
+    $5i3Xb('caret', comp, options);
+    const r = options.loose ? $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.CARETLOOSE] : $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.CARET];
     const z = options.includePrerelease ? '-0' : '';
     return comp.replace(r, (_, M, m, p, pr)=>{
-        $dvl3O('caret', comp, _, M, m, p, pr);
+        $5i3Xb('caret', comp, _, M, m, p, pr);
         let ret;
-        if ($e94468fbca9194e9$var$isX(M)) ret = '';
-        else if ($e94468fbca9194e9$var$isX(m)) ret = `>=${M}.0.0${z} <${+M + 1}.0.0-0`;
-        else if ($e94468fbca9194e9$var$isX(p)) {
+        if ($fdcbe1790ffdd24a$var$isX(M)) ret = '';
+        else if ($fdcbe1790ffdd24a$var$isX(m)) ret = `>=${M}.0.0${z} <${+M + 1}.0.0-0`;
+        else if ($fdcbe1790ffdd24a$var$isX(p)) {
             if (M === '0') ret = `>=${M}.${m}.0${z} <${M}.${+m + 1}.0-0`;
             else ret = `>=${M}.${m}.0${z} <${+M + 1}.0.0-0`;
         } else if (pr) {
-            $dvl3O('replaceCaret pr', pr);
+            $5i3Xb('replaceCaret pr', pr);
             if (M === '0') {
                 if (m === '0') ret = `>=${M}.${m}.${p}-${pr} <${M}.${m}.${+p + 1}-0`;
                 else ret = `>=${M}.${m}.${p}-${pr} <${M}.${+m + 1}.0-0`;
             } else ret = `>=${M}.${m}.${p}-${pr} <${+M + 1}.0.0-0`;
         } else {
-            $dvl3O('no pr');
+            $5i3Xb('no pr');
             if (M === '0') {
                 if (m === '0') ret = `>=${M}.${m}.${p} <${M}.${m}.${+p + 1}-0`;
                 else ret = `>=${M}.${m}.${p} <${M}.${+m + 1}.0-0`;
             } else ret = `>=${M}.${m}.${p} <${+M + 1}.0.0-0`;
         }
-        $dvl3O('caret return', ret);
+        $5i3Xb('caret return', ret);
         return ret;
     });
 };
-const $e94468fbca9194e9$var$replaceXRanges = (comp, options)=>{
-    $dvl3O('replaceXRanges', comp, options);
-    return comp.split(/\s+/).map((c)=>$e94468fbca9194e9$var$replaceXRange(c, options)).join(' ');
+const $fdcbe1790ffdd24a$var$replaceXRanges = (comp, options)=>{
+    $5i3Xb('replaceXRanges', comp, options);
+    return comp.split(/\s+/).map((c)=>$fdcbe1790ffdd24a$var$replaceXRange(c, options)).join(' ');
 };
-const $e94468fbca9194e9$var$replaceXRange = (comp, options)=>{
+const $fdcbe1790ffdd24a$var$replaceXRange = (comp, options)=>{
     comp = comp.trim();
-    const r = options.loose ? $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.XRANGELOOSE] : $e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.XRANGE];
+    const r = options.loose ? $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.XRANGELOOSE] : $fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.XRANGE];
     return comp.replace(r, (ret, gtlt, M, m, p, pr)=>{
-        $dvl3O('xRange', comp, ret, gtlt, M, m, p, pr);
-        if ($e94468fbca9194e9$var$invalidXRangeOrder(M, m, p)) return comp;
-        const xM = $e94468fbca9194e9$var$isX(M);
-        const xm = xM || $e94468fbca9194e9$var$isX(m);
-        const xp = xm || $e94468fbca9194e9$var$isX(p);
+        $5i3Xb('xRange', comp, ret, gtlt, M, m, p, pr);
+        if ($fdcbe1790ffdd24a$var$invalidXRangeOrder(M, m, p)) return comp;
+        const xM = $fdcbe1790ffdd24a$var$isX(M);
+        const xm = xM || $fdcbe1790ffdd24a$var$isX(m);
+        const xp = xm || $fdcbe1790ffdd24a$var$isX(p);
         const anyX = xp;
         if (gtlt === '=' && anyX) gtlt = '';
         // if we're including prereleases in the match, then we need
@@ -25229,20 +25229,20 @@ const $e94468fbca9194e9$var$replaceXRange = (comp, options)=>{
             ret = `${gtlt + M}.${m}.${p}${pr}`;
         } else if (xm) ret = `>=${M}.0.0${pr} <${+M + 1}.0.0-0`;
         else if (xp) ret = `>=${M}.${m}.0${pr} <${M}.${+m + 1}.0-0`;
-        $dvl3O('xRange return', ret);
+        $5i3Xb('xRange return', ret);
         return ret;
     });
 };
 // Because * is AND-ed with everything else in the comparator,
 // and '' means "any version", just remove the *s entirely.
-const $e94468fbca9194e9$var$replaceStars = (comp, options)=>{
-    $dvl3O('replaceStars', comp, options);
+const $fdcbe1790ffdd24a$var$replaceStars = (comp, options)=>{
+    $5i3Xb('replaceStars', comp, options);
     // Looseness is ignored here.  star is always as loose as it gets!
-    return comp.trim().replace($e94468fbca9194e9$require$re[$e94468fbca9194e9$require$t.STAR], '');
+    return comp.trim().replace($fdcbe1790ffdd24a$require$re[$fdcbe1790ffdd24a$require$t.STAR], '');
 };
-const $e94468fbca9194e9$var$replaceGTE0 = (comp, options)=>{
-    $dvl3O('replaceGTE0', comp, options);
-    return comp.trim().replace($e94468fbca9194e9$require$re[options.includePrerelease ? $e94468fbca9194e9$require$t.GTE0PRE : $e94468fbca9194e9$require$t.GTE0], '');
+const $fdcbe1790ffdd24a$var$replaceGTE0 = (comp, options)=>{
+    $5i3Xb('replaceGTE0', comp, options);
+    return comp.trim().replace($fdcbe1790ffdd24a$require$re[options.includePrerelease ? $fdcbe1790ffdd24a$require$t.GTE0PRE : $fdcbe1790ffdd24a$require$t.GTE0], '');
 };
 // This function is passed to string.replace(re[t.HYPHENRANGE])
 // M, m, patch, prerelease, build
@@ -25250,21 +25250,21 @@ const $e94468fbca9194e9$var$replaceGTE0 = (comp, options)=>{
 // 1.2.3 - 3.4 => >=1.2.0 <3.5.0-0 Any 3.4.x will do
 // 1.2 - 3.4 => >=1.2.0 <3.5.0-0
 // TODO build?
-const $e94468fbca9194e9$var$hyphenReplace = (incPr)=>($0, from, fM, fm, fp, fpr, fb, to, tM, tm, tp, tpr)=>{
-        if ($e94468fbca9194e9$var$isX(fM)) from = '';
-        else if ($e94468fbca9194e9$var$isX(fm)) from = `>=${fM}.0.0${incPr ? '-0' : ''}`;
-        else if ($e94468fbca9194e9$var$isX(fp)) from = `>=${fM}.${fm}.0${incPr ? '-0' : ''}`;
+const $fdcbe1790ffdd24a$var$hyphenReplace = (incPr)=>($0, from, fM, fm, fp, fpr, fb, to, tM, tm, tp, tpr)=>{
+        if ($fdcbe1790ffdd24a$var$isX(fM)) from = '';
+        else if ($fdcbe1790ffdd24a$var$isX(fm)) from = `>=${fM}.0.0${incPr ? '-0' : ''}`;
+        else if ($fdcbe1790ffdd24a$var$isX(fp)) from = `>=${fM}.${fm}.0${incPr ? '-0' : ''}`;
         else if (fpr) from = `>=${from}`;
         else from = `>=${from}${incPr ? '-0' : ''}`;
-        if ($e94468fbca9194e9$var$isX(tM)) to = '';
-        else if ($e94468fbca9194e9$var$isX(tm)) to = `<${+tM + 1}.0.0-0`;
-        else if ($e94468fbca9194e9$var$isX(tp)) to = `<${tM}.${+tm + 1}.0-0`;
+        if ($fdcbe1790ffdd24a$var$isX(tM)) to = '';
+        else if ($fdcbe1790ffdd24a$var$isX(tm)) to = `<${+tM + 1}.0.0-0`;
+        else if ($fdcbe1790ffdd24a$var$isX(tp)) to = `<${tM}.${+tm + 1}.0-0`;
         else if (tpr) to = `<=${tM}.${tm}.${tp}-${tpr}`;
         else if (incPr) to = `<${tM}.${tm}.${+tp + 1}-0`;
         else to = `<=${to}`;
         return `${from} ${to}`.trim();
     };
-const $e94468fbca9194e9$var$testSet = (set, version, options)=>{
+const $fdcbe1790ffdd24a$var$testSet = (set, version, options)=>{
     for(let i = 0; i < set.length; i++){
         if (!set[i].test(version)) return false;
     }
@@ -25275,8 +25275,8 @@ const $e94468fbca9194e9$var$testSet = (set, version, options)=>{
         // However, `1.2.4-alpha.notready` should NOT be allowed,
         // even though it's within the range set by the comparators.
         for(let i = 0; i < set.length; i++){
-            $dvl3O(set[i].semver);
-            if (set[i].semver === $9ea678ea1a248c7b$exports.ANY) continue;
+            $5i3Xb(set[i].semver);
+            if (set[i].semver === $272cdb1e6279d540$exports.ANY) continue;
             if (set[i].semver.prerelease.length > 0) {
                 const allowed = set[i].semver;
                 if (allowed.major === version.major && allowed.minor === version.minor && allowed.patch === version.patch) return true;
@@ -25292,38 +25292,38 @@ const $e94468fbca9194e9$var$testSet = (set, version, options)=>{
 
 
 
-var $d725e3f5f42992df$exports = {};
+var $aa1706c6a4f0c531$exports = {};
 'use strict';
 
-const $d725e3f5f42992df$var$satisfies = (version, range, options)=>{
+const $aa1706c6a4f0c531$var$satisfies = (version, range, options)=>{
     try {
-        range = new $e94468fbca9194e9$exports(range, options);
+        range = new $fdcbe1790ffdd24a$exports(range, options);
     } catch (er) {
         return false;
     }
     return range.test(version);
 };
-$d725e3f5f42992df$exports = $d725e3f5f42992df$var$satisfies;
+$aa1706c6a4f0c531$exports = $aa1706c6a4f0c531$var$satisfies;
 
 
-var $37c67ceaf3673ecf$exports = {};
+var $90aedc5f000d8cd3$exports = {};
 'use strict';
 
 // Mostly just for testing and legacy API reasons
-const $37c67ceaf3673ecf$var$toComparators = (range, options)=>new $e94468fbca9194e9$exports(range, options).set.map((comp)=>comp.map((c)=>c.value).join(' ').trim().split(' '));
-$37c67ceaf3673ecf$exports = $37c67ceaf3673ecf$var$toComparators;
+const $90aedc5f000d8cd3$var$toComparators = (range, options)=>new $fdcbe1790ffdd24a$exports(range, options).set.map((comp)=>comp.map((c)=>c.value).join(' ').trim().split(' '));
+$90aedc5f000d8cd3$exports = $90aedc5f000d8cd3$var$toComparators;
 
 
-var $c7a2bab067b1ee85$exports = {};
+var $0be09e6612438402$exports = {};
 'use strict';
 
 
-const $c7a2bab067b1ee85$var$maxSatisfying = (versions, range, options)=>{
+const $0be09e6612438402$var$maxSatisfying = (versions, range, options)=>{
     let max = null;
     let maxSV = null;
     let rangeObj = null;
     try {
-        rangeObj = new $e94468fbca9194e9$exports(range, options);
+        rangeObj = new $fdcbe1790ffdd24a$exports(range, options);
     } catch (er) {
         return null;
     }
@@ -25333,25 +25333,25 @@ const $c7a2bab067b1ee85$var$maxSatisfying = (versions, range, options)=>{
             if (!max || maxSV.compare(v) === -1) {
                 // compare(max, v, true)
                 max = v;
-                maxSV = new $21f7971eeab3bc0c$exports(max, options);
+                maxSV = new $6c372f01b88a20b2$exports(max, options);
             }
         }
     });
     return max;
 };
-$c7a2bab067b1ee85$exports = $c7a2bab067b1ee85$var$maxSatisfying;
+$0be09e6612438402$exports = $0be09e6612438402$var$maxSatisfying;
 
 
-var $d15b3b551bf34f39$exports = {};
+var $bd749f0681879687$exports = {};
 'use strict';
 
 
-const $d15b3b551bf34f39$var$minSatisfying = (versions, range, options)=>{
+const $bd749f0681879687$var$minSatisfying = (versions, range, options)=>{
     let min = null;
     let minSV = null;
     let rangeObj = null;
     try {
-        rangeObj = new $e94468fbca9194e9$exports(range, options);
+        rangeObj = new $fdcbe1790ffdd24a$exports(range, options);
     } catch (er) {
         return null;
     }
@@ -25361,25 +25361,25 @@ const $d15b3b551bf34f39$var$minSatisfying = (versions, range, options)=>{
             if (!min || minSV.compare(v) === 1) {
                 // compare(min, v, true)
                 min = v;
-                minSV = new $21f7971eeab3bc0c$exports(min, options);
+                minSV = new $6c372f01b88a20b2$exports(min, options);
             }
         }
     });
     return min;
 };
-$d15b3b551bf34f39$exports = $d15b3b551bf34f39$var$minSatisfying;
+$bd749f0681879687$exports = $bd749f0681879687$var$minSatisfying;
 
 
-var $26321b2158543220$exports = {};
+var $3abd1f93911c7f8f$exports = {};
 'use strict';
 
 
 
-const $26321b2158543220$var$minVersion = (range, loose)=>{
-    range = new $e94468fbca9194e9$exports(range, loose);
-    let minver = new $21f7971eeab3bc0c$exports('0.0.0');
+const $3abd1f93911c7f8f$var$minVersion = (range, loose)=>{
+    range = new $fdcbe1790ffdd24a$exports(range, loose);
+    let minver = new $6c372f01b88a20b2$exports('0.0.0');
     if (range.test(minver)) return minver;
-    minver = new $21f7971eeab3bc0c$exports('0.0.0-0');
+    minver = new $6c372f01b88a20b2$exports('0.0.0-0');
     if (range.test(minver)) return minver;
     minver = null;
     for(let i = 0; i < range.set.length; ++i){
@@ -25387,7 +25387,7 @@ const $26321b2158543220$var$minVersion = (range, loose)=>{
         let setMin = null;
         comparators.forEach((comparator)=>{
             // Clone to avoid manipulating the comparator's semver object.
-            const compver = new $21f7971eeab3bc0c$exports(comparator.semver.version);
+            const compver = new $6c372f01b88a20b2$exports(comparator.semver.version);
             switch(comparator.operator){
                 case '>':
                     if (compver.prerelease.length === 0) compver.patch++;
@@ -25395,7 +25395,7 @@ const $26321b2158543220$var$minVersion = (range, loose)=>{
                     compver.raw = compver.format();
                 /* fallthrough */ case '':
                 case '>=':
-                    if (!setMin || $605af63b3c607924$exports(compver, setMin)) setMin = compver;
+                    if (!setMin || $f36ad7052edb25ac$exports(compver, setMin)) setMin = compver;
                     break;
                 case '<':
                 case '<=':
@@ -25404,56 +25404,56 @@ const $26321b2158543220$var$minVersion = (range, loose)=>{
                     throw new Error(`Unexpected operation: ${comparator.operator}`);
             }
         });
-        if (setMin && (!minver || $605af63b3c607924$exports(minver, setMin))) minver = setMin;
+        if (setMin && (!minver || $f36ad7052edb25ac$exports(minver, setMin))) minver = setMin;
     }
     if (minver && range.test(minver)) return minver;
     return null;
 };
-$26321b2158543220$exports = $26321b2158543220$var$minVersion;
+$3abd1f93911c7f8f$exports = $3abd1f93911c7f8f$var$minVersion;
 
 
-var $236bcbed219488f6$exports = {};
+var $b9e01514b6338e2a$exports = {};
 'use strict';
 
-const $236bcbed219488f6$var$validRange = (range, options)=>{
+const $b9e01514b6338e2a$var$validRange = (range, options)=>{
     try {
         // Return '*' instead of '' so that truthiness works.
         // This will throw if it's invalid anyway
-        return new $e94468fbca9194e9$exports(range, options).range || '*';
+        return new $fdcbe1790ffdd24a$exports(range, options).range || '*';
     } catch (er) {
         return null;
     }
 };
-$236bcbed219488f6$exports = $236bcbed219488f6$var$validRange;
+$b9e01514b6338e2a$exports = $b9e01514b6338e2a$var$validRange;
 
 
-var $ebf62546488e3b78$exports = {};
+var $dee92ea7411a6b7e$exports = {};
 'use strict';
 
 
-const { ANY: $ebf62546488e3b78$var$ANY } = $9ea678ea1a248c7b$exports;
+const { ANY: $dee92ea7411a6b7e$var$ANY } = $272cdb1e6279d540$exports;
 
 
 
 
 
 
-const $ebf62546488e3b78$var$outside = (version, range, hilo, options)=>{
-    version = new $21f7971eeab3bc0c$exports(version, options);
-    range = new $e94468fbca9194e9$exports(range, options);
+const $dee92ea7411a6b7e$var$outside = (version, range, hilo, options)=>{
+    version = new $6c372f01b88a20b2$exports(version, options);
+    range = new $fdcbe1790ffdd24a$exports(range, options);
     let gtfn, ltefn, ltfn, comp, ecomp;
     switch(hilo){
         case '>':
-            gtfn = $605af63b3c607924$exports;
-            ltefn = $1af5121ee0e5df8c$exports;
-            ltfn = $401241980f813d4e$exports;
+            gtfn = $f36ad7052edb25ac$exports;
+            ltefn = $0407f55097fa83b8$exports;
+            ltfn = $9e0f4c858c764c8f$exports;
             comp = '>';
             ecomp = '>=';
             break;
         case '<':
-            gtfn = $401241980f813d4e$exports;
-            ltefn = $654dd8b17bc8fdbb$exports;
-            ltfn = $605af63b3c607924$exports;
+            gtfn = $9e0f4c858c764c8f$exports;
+            ltefn = $1436acd3e03a5861$exports;
+            ltfn = $f36ad7052edb25ac$exports;
             comp = '<';
             ecomp = '<=';
             break;
@@ -25461,7 +25461,7 @@ const $ebf62546488e3b78$var$outside = (version, range, hilo, options)=>{
             throw new TypeError('Must provide a hilo val of "<" or ">"');
     }
     // If it satisfies the range it is not outside
-    if ($d725e3f5f42992df$exports(version, range, options)) return false;
+    if ($aa1706c6a4f0c531$exports(version, range, options)) return false;
     // From now on, variable terms are as if we're in "gtr" mode.
     // but note that everything is flipped for the "ltr" function.
     for(let i = 0; i < range.set.length; ++i){
@@ -25469,7 +25469,7 @@ const $ebf62546488e3b78$var$outside = (version, range, hilo, options)=>{
         let high = null;
         let low = null;
         comparators.forEach((comparator)=>{
-            if (comparator.semver === $ebf62546488e3b78$var$ANY) comparator = new $9ea678ea1a248c7b$exports('>=0.0.0');
+            if (comparator.semver === $dee92ea7411a6b7e$var$ANY) comparator = new $272cdb1e6279d540$exports('>=0.0.0');
             high = high || comparator;
             low = low || comparator;
             if (gtfn(comparator.semver, high.semver, options)) high = comparator;
@@ -25485,46 +25485,46 @@ const $ebf62546488e3b78$var$outside = (version, range, hilo, options)=>{
     }
     return true;
 };
-$ebf62546488e3b78$exports = $ebf62546488e3b78$var$outside;
+$dee92ea7411a6b7e$exports = $dee92ea7411a6b7e$var$outside;
 
 
-var $bd3ed00eb259c140$exports = {};
+var $7c7c9bf5b2050b13$exports = {};
 'use strict';
 
-const $bd3ed00eb259c140$var$gtr = (version, range, options)=>$ebf62546488e3b78$exports(version, range, '>', options);
-$bd3ed00eb259c140$exports = $bd3ed00eb259c140$var$gtr;
+const $7c7c9bf5b2050b13$var$gtr = (version, range, options)=>$dee92ea7411a6b7e$exports(version, range, '>', options);
+$7c7c9bf5b2050b13$exports = $7c7c9bf5b2050b13$var$gtr;
 
 
-var $eddd39ce940a7624$exports = {};
+var $81d52c85ec319a78$exports = {};
 'use strict';
 
 // Determine if version is less than all the versions possible in the range
-const $eddd39ce940a7624$var$ltr = (version, range, options)=>$ebf62546488e3b78$exports(version, range, '<', options);
-$eddd39ce940a7624$exports = $eddd39ce940a7624$var$ltr;
+const $81d52c85ec319a78$var$ltr = (version, range, options)=>$dee92ea7411a6b7e$exports(version, range, '<', options);
+$81d52c85ec319a78$exports = $81d52c85ec319a78$var$ltr;
 
 
-var $4a0e44a199309afd$exports = {};
+var $572551ed1dafae40$exports = {};
 'use strict';
 
-const $4a0e44a199309afd$var$intersects = (r1, r2, options)=>{
-    r1 = new $e94468fbca9194e9$exports(r1, options);
-    r2 = new $e94468fbca9194e9$exports(r2, options);
+const $572551ed1dafae40$var$intersects = (r1, r2, options)=>{
+    r1 = new $fdcbe1790ffdd24a$exports(r1, options);
+    r2 = new $fdcbe1790ffdd24a$exports(r2, options);
     return r1.intersects(r2, options);
 };
-$4a0e44a199309afd$exports = $4a0e44a199309afd$var$intersects;
+$572551ed1dafae40$exports = $572551ed1dafae40$var$intersects;
 
 
-var $c7e0a42584dfe7de$exports = {};
+var $86b5de86458cd81a$exports = {};
 'use strict';
 
 
-$c7e0a42584dfe7de$exports = (versions, range, options)=>{
+$86b5de86458cd81a$exports = (versions, range, options)=>{
     const set = [];
     let first = null;
     let prev = null;
-    const v = versions.sort((a, b)=>$f6f88307ee5d5ad8$exports(a, b, options));
+    const v = versions.sort((a, b)=>$141cfddfeed8413d$exports(a, b, options));
     for (const version of v){
-        const included = $d725e3f5f42992df$exports(version, range, options);
+        const included = $aa1706c6a4f0c531$exports(version, range, options);
         if (included) {
             prev = version;
             if (!first) first = version;
@@ -25555,11 +25555,11 @@ $c7e0a42584dfe7de$exports = (versions, range, options)=>{
 };
 
 
-var $cee41a39cb3c692a$exports = {};
+var $828eca507638653a$exports = {};
 'use strict';
 
 
-const { ANY: $cee41a39cb3c692a$var$ANY } = $9ea678ea1a248c7b$exports;
+const { ANY: $828eca507638653a$var$ANY } = $272cdb1e6279d540$exports;
 
 
 // Complex range `r1 || r2 || ...` is a subset of `R1 || R2 || ...` iff:
@@ -25597,14 +25597,14 @@ const { ANY: $cee41a39cb3c692a$var$ANY } = $9ea678ea1a248c7b$exports;
 //   - If LT.semver has a prerelease, and not in prerelease mode
 //     - If no C has a prerelease and the LT.semver tuple, return false
 // - Else return true
-const $cee41a39cb3c692a$var$subset = (sub, dom, options = {})=>{
+const $828eca507638653a$var$subset = (sub, dom, options = {})=>{
     if (sub === dom) return true;
-    sub = new $e94468fbca9194e9$exports(sub, options);
-    dom = new $e94468fbca9194e9$exports(dom, options);
+    sub = new $fdcbe1790ffdd24a$exports(sub, options);
+    dom = new $fdcbe1790ffdd24a$exports(dom, options);
     let sawNonNull = false;
     OUTER: for (const simpleSub of sub.set){
         for (const simpleDom of dom.set){
-            const isSub = $cee41a39cb3c692a$var$simpleSubset(simpleSub, simpleDom, options);
+            const isSub = $828eca507638653a$var$simpleSubset(simpleSub, simpleDom, options);
             sawNonNull = sawNonNull || isSub !== null;
             if (isSub) continue OUTER;
         }
@@ -25616,43 +25616,43 @@ const $cee41a39cb3c692a$var$subset = (sub, dom, options = {})=>{
     }
     return true;
 };
-const $cee41a39cb3c692a$var$minimumVersionWithPreRelease = [
-    new $9ea678ea1a248c7b$exports('>=0.0.0-0')
+const $828eca507638653a$var$minimumVersionWithPreRelease = [
+    new $272cdb1e6279d540$exports('>=0.0.0-0')
 ];
-const $cee41a39cb3c692a$var$minimumVersion = [
-    new $9ea678ea1a248c7b$exports('>=0.0.0')
+const $828eca507638653a$var$minimumVersion = [
+    new $272cdb1e6279d540$exports('>=0.0.0')
 ];
-const $cee41a39cb3c692a$var$simpleSubset = (sub, dom, options)=>{
+const $828eca507638653a$var$simpleSubset = (sub, dom, options)=>{
     if (sub === dom) return true;
-    if (sub.length === 1 && sub[0].semver === $cee41a39cb3c692a$var$ANY) {
-        if (dom.length === 1 && dom[0].semver === $cee41a39cb3c692a$var$ANY) return true;
-        else if (options.includePrerelease) sub = $cee41a39cb3c692a$var$minimumVersionWithPreRelease;
-        else sub = $cee41a39cb3c692a$var$minimumVersion;
+    if (sub.length === 1 && sub[0].semver === $828eca507638653a$var$ANY) {
+        if (dom.length === 1 && dom[0].semver === $828eca507638653a$var$ANY) return true;
+        else if (options.includePrerelease) sub = $828eca507638653a$var$minimumVersionWithPreRelease;
+        else sub = $828eca507638653a$var$minimumVersion;
     }
-    if (dom.length === 1 && dom[0].semver === $cee41a39cb3c692a$var$ANY) {
+    if (dom.length === 1 && dom[0].semver === $828eca507638653a$var$ANY) {
         if (options.includePrerelease) return true;
-        else dom = $cee41a39cb3c692a$var$minimumVersion;
+        else dom = $828eca507638653a$var$minimumVersion;
     }
     const eqSet = new Set();
     let gt, lt;
     for (const c of sub){
-        if (c.operator === '>' || c.operator === '>=') gt = $cee41a39cb3c692a$var$higherGT(gt, c, options);
-        else if (c.operator === '<' || c.operator === '<=') lt = $cee41a39cb3c692a$var$lowerLT(lt, c, options);
+        if (c.operator === '>' || c.operator === '>=') gt = $828eca507638653a$var$higherGT(gt, c, options);
+        else if (c.operator === '<' || c.operator === '<=') lt = $828eca507638653a$var$lowerLT(lt, c, options);
         else eqSet.add(c.semver);
     }
     if (eqSet.size > 1) return null;
     let gtltComp;
     if (gt && lt) {
-        gtltComp = $f6f88307ee5d5ad8$exports(gt.semver, lt.semver, options);
+        gtltComp = $141cfddfeed8413d$exports(gt.semver, lt.semver, options);
         if (gtltComp > 0) return null;
         else if (gtltComp === 0 && (gt.operator !== '>=' || lt.operator !== '<=')) return null;
     }
     // will iterate one or zero times
     for (const eq of eqSet){
-        if (gt && !$d725e3f5f42992df$exports(eq, String(gt), options)) return null;
-        if (lt && !$d725e3f5f42992df$exports(eq, String(lt), options)) return null;
+        if (gt && !$aa1706c6a4f0c531$exports(eq, String(gt), options)) return null;
+        if (lt && !$aa1706c6a4f0c531$exports(eq, String(lt), options)) return null;
         for (const c of dom){
-            if (!$d725e3f5f42992df$exports(eq, String(c), options)) return false;
+            if (!$aa1706c6a4f0c531$exports(eq, String(c), options)) return false;
         }
         return true;
     }
@@ -25672,7 +25672,7 @@ const $cee41a39cb3c692a$var$simpleSubset = (sub, dom, options)=>{
                 if (c.semver.prerelease && c.semver.prerelease.length && c.semver.major === needDomGTPre.major && c.semver.minor === needDomGTPre.minor && c.semver.patch === needDomGTPre.patch) needDomGTPre = false;
             }
             if (c.operator === '>' || c.operator === '>=') {
-                higher = $cee41a39cb3c692a$var$higherGT(gt, c, options);
+                higher = $828eca507638653a$var$higherGT(gt, c, options);
                 if (higher === c && higher !== gt) return false;
             } else if (gt.operator === '>=' && !c.test(gt.semver)) return false;
         }
@@ -25681,7 +25681,7 @@ const $cee41a39cb3c692a$var$simpleSubset = (sub, dom, options)=>{
                 if (c.semver.prerelease && c.semver.prerelease.length && c.semver.major === needDomLTPre.major && c.semver.minor === needDomLTPre.minor && c.semver.patch === needDomLTPre.patch) needDomLTPre = false;
             }
             if (c.operator === '<' || c.operator === '<=') {
-                lower = $cee41a39cb3c692a$var$lowerLT(lt, c, options);
+                lower = $828eca507638653a$var$lowerLT(lt, c, options);
                 if (lower === c && lower !== lt) return false;
             } else if (lt.operator === '<=' && !c.test(lt.semver)) return false;
         }
@@ -25699,67 +25699,67 @@ const $cee41a39cb3c692a$var$simpleSubset = (sub, dom, options)=>{
     return true;
 };
 // >=1.2.3 is lower than >1.2.3
-const $cee41a39cb3c692a$var$higherGT = (a, b, options)=>{
+const $828eca507638653a$var$higherGT = (a, b, options)=>{
     if (!a) return b;
-    const comp = $f6f88307ee5d5ad8$exports(a.semver, b.semver, options);
+    const comp = $141cfddfeed8413d$exports(a.semver, b.semver, options);
     return comp > 0 ? a : comp < 0 ? b : b.operator === '>' && a.operator === '>=' ? b : a;
 };
 // <=1.2.3 is higher than <1.2.3
-const $cee41a39cb3c692a$var$lowerLT = (a, b, options)=>{
+const $828eca507638653a$var$lowerLT = (a, b, options)=>{
     if (!a) return b;
-    const comp = $f6f88307ee5d5ad8$exports(a.semver, b.semver, options);
+    const comp = $141cfddfeed8413d$exports(a.semver, b.semver, options);
     return comp < 0 ? a : comp > 0 ? b : b.operator === '<' && a.operator === '<=' ? b : a;
 };
-$cee41a39cb3c692a$exports = $cee41a39cb3c692a$var$subset;
+$828eca507638653a$exports = $828eca507638653a$var$subset;
 
 
-$60652d0c51947fdc$exports = {
-    parse: $b6ebadaa41741ffb$exports,
-    valid: $5a2261787396d98f$exports,
-    clean: $92dcef9d75d3ee49$exports,
-    inc: $c2512d0d2fe796ac$exports,
-    diff: $3a169a93ea32e06d$exports,
-    major: $344827c2f8a28520$exports,
-    minor: $3dc8477bc2ff435c$exports,
-    patch: $e41214f38b04b951$exports,
-    prerelease: $f1099b263fbe91bc$exports,
-    compare: $f6f88307ee5d5ad8$exports,
-    rcompare: $e12e88d7ebbb9426$exports,
-    compareLoose: $b8546e4df8d84a4f$exports,
-    compareBuild: $6a5f71ba1642e5fb$exports,
-    sort: $08cabc75cc5e048c$exports,
-    rsort: $2af6f72907183252$exports,
-    gt: $605af63b3c607924$exports,
-    lt: $401241980f813d4e$exports,
-    eq: $61774bda2a191b2f$exports,
-    neq: $761b3aa9a59ac84b$exports,
-    gte: $654dd8b17bc8fdbb$exports,
-    lte: $1af5121ee0e5df8c$exports,
-    cmp: $2194cfae8f4379ac$exports,
-    coerce: $b4167b5348fab01e$exports,
-    truncate: $6337d8530f730915$exports,
-    Comparator: $9ea678ea1a248c7b$exports,
-    Range: $e94468fbca9194e9$exports,
-    satisfies: $d725e3f5f42992df$exports,
-    toComparators: $37c67ceaf3673ecf$exports,
-    maxSatisfying: $c7a2bab067b1ee85$exports,
-    minSatisfying: $d15b3b551bf34f39$exports,
-    minVersion: $26321b2158543220$exports,
-    validRange: $236bcbed219488f6$exports,
-    outside: $ebf62546488e3b78$exports,
-    gtr: $bd3ed00eb259c140$exports,
-    ltr: $eddd39ce940a7624$exports,
-    intersects: $4a0e44a199309afd$exports,
-    simplifyRange: $c7e0a42584dfe7de$exports,
-    subset: $cee41a39cb3c692a$exports,
-    SemVer: $21f7971eeab3bc0c$exports,
-    re: $3hxy2.re,
-    src: $3hxy2.src,
-    tokens: $3hxy2.t,
-    SEMVER_SPEC_VERSION: $9m0kz.SEMVER_SPEC_VERSION,
-    RELEASE_TYPES: $9m0kz.RELEASE_TYPES,
-    compareIdentifiers: $8e8ea8b9b5888212$exports.compareIdentifiers,
-    rcompareIdentifiers: $8e8ea8b9b5888212$exports.rcompareIdentifiers
+$7525af423601f675$exports = {
+    parse: $8dac5ee06632dbbf$exports,
+    valid: $94a025bfe0b0e338$exports,
+    clean: $aa3413a0dde9a0a1$exports,
+    inc: $8d9a26ec08bdb707$exports,
+    diff: $4392cecd1dd462ca$exports,
+    major: $faba94fd1b5ac998$exports,
+    minor: $67a093229859bdb0$exports,
+    patch: $418889e9a7f04767$exports,
+    prerelease: $f856b83e96e8f963$exports,
+    compare: $141cfddfeed8413d$exports,
+    rcompare: $fe4733cd9e2b6e46$exports,
+    compareLoose: $e92972dd79674e96$exports,
+    compareBuild: $7f569957101287bc$exports,
+    sort: $76011fba3042e569$exports,
+    rsort: $46e6e0e5592021f4$exports,
+    gt: $f36ad7052edb25ac$exports,
+    lt: $9e0f4c858c764c8f$exports,
+    eq: $24db49ef0624e239$exports,
+    neq: $0bc0e343e5e749e0$exports,
+    gte: $1436acd3e03a5861$exports,
+    lte: $0407f55097fa83b8$exports,
+    cmp: $3cdf77497331d672$exports,
+    coerce: $c9c2d7a3bc99ff61$exports,
+    truncate: $46cbda6548e517fa$exports,
+    Comparator: $272cdb1e6279d540$exports,
+    Range: $fdcbe1790ffdd24a$exports,
+    satisfies: $aa1706c6a4f0c531$exports,
+    toComparators: $90aedc5f000d8cd3$exports,
+    maxSatisfying: $0be09e6612438402$exports,
+    minSatisfying: $bd749f0681879687$exports,
+    minVersion: $3abd1f93911c7f8f$exports,
+    validRange: $b9e01514b6338e2a$exports,
+    outside: $dee92ea7411a6b7e$exports,
+    gtr: $7c7c9bf5b2050b13$exports,
+    ltr: $81d52c85ec319a78$exports,
+    intersects: $572551ed1dafae40$exports,
+    simplifyRange: $86b5de86458cd81a$exports,
+    subset: $828eca507638653a$exports,
+    SemVer: $6c372f01b88a20b2$exports,
+    re: $2mocL.re,
+    src: $2mocL.src,
+    tokens: $2mocL.t,
+    SEMVER_SPEC_VERSION: $g7kfl.SEMVER_SPEC_VERSION,
+    RELEASE_TYPES: $g7kfl.RELEASE_TYPES,
+    compareIdentifiers: $74f5f5cee4f3f8a9$exports.compareIdentifiers,
+    rcompareIdentifiers: $74f5f5cee4f3f8a9$exports.rcompareIdentifiers
 };
 
 
@@ -25813,14 +25813,14 @@ function $214af3997ccafa11$export$4ff58928b21eff79(versionSpec, stable, candidat
         for (const candidate of candidates){
             const version = candidate.version;
             (0, $da816f606135dc7c$export$1c9f709888824e05)(`check ${version} satisfies ${versionSpec}`);
-            if ($60652d0c51947fdc$exports.satisfies(version, versionSpec) && (!stable || candidate.stable === stable)) {
+            if ($7525af423601f675$exports.satisfies(version, versionSpec) && (!stable || candidate.stable === stable)) {
                 file = candidate.files.find((item)=>{
                     (0, $da816f606135dc7c$export$1c9f709888824e05)(`${item.arch}===${archFilter} && ${item.platform}===${platFilter}`);
                     let chk = item.arch === archFilter && item.platform === platFilter;
                     if (chk && item.platform_version) {
                         const osVersion = $214af3997ccafa11$export$af932de1a8c3ac69();
                         if (osVersion === item.platform_version) chk = true;
-                        else chk = $60652d0c51947fdc$exports.satisfies(osVersion, item.platform_version);
+                        else chk = $7525af423601f675$exports.satisfies(osVersion, item.platform_version);
                     }
                     return chk;
                 });
@@ -26237,7 +26237,7 @@ function $e2d7a47000ccff78$var$extractZipNix(file, dest) {
 }
 function $e2d7a47000ccff78$export$212994f9616d6a96(sourceDir, tool, version, arch) {
     return $e2d7a47000ccff78$var$__awaiter(this, void 0, void 0, function*() {
-        version = $60652d0c51947fdc$exports.clean(version) || version;
+        version = $7525af423601f675$exports.clean(version) || version;
         arch = arch || $bknAJ$os.arch();
         $da816f606135dc7c$export$1c9f709888824e05(`Caching tool ${tool} ${version} ${arch}`);
         $da816f606135dc7c$export$1c9f709888824e05(`source dir: ${sourceDir}`);
@@ -26259,7 +26259,7 @@ function $e2d7a47000ccff78$export$212994f9616d6a96(sourceDir, tool, version, arc
 }
 function $e2d7a47000ccff78$export$da9fc0828cc98f91(sourceFile, targetFile, tool, version, arch) {
     return $e2d7a47000ccff78$var$__awaiter(this, void 0, void 0, function*() {
-        version = $60652d0c51947fdc$exports.clean(version) || version;
+        version = $7525af423601f675$exports.clean(version) || version;
         arch = arch || $bknAJ$os.arch();
         $da816f606135dc7c$export$1c9f709888824e05(`Caching tool ${tool} ${version} ${arch}`);
         $da816f606135dc7c$export$1c9f709888824e05(`source file: ${sourceFile}`);
@@ -26289,7 +26289,7 @@ function $e2d7a47000ccff78$export$71aa6c912b956294(toolName, versionSpec, arch) 
     // check for the explicit version in the cache
     let toolPath = '';
     if (versionSpec) {
-        versionSpec = $60652d0c51947fdc$exports.clean(versionSpec) || '';
+        versionSpec = $7525af423601f675$exports.clean(versionSpec) || '';
         const cachePath = $bknAJ$path.join($e2d7a47000ccff78$var$_getCacheDirectory(), toolName, versionSpec, arch);
         $da816f606135dc7c$export$1c9f709888824e05(`checking cache: ${cachePath}`);
         if ($bknAJ$fs.existsSync(cachePath) && $bknAJ$fs.existsSync(`${cachePath}.complete`)) {
@@ -26360,7 +26360,7 @@ function $e2d7a47000ccff78$var$_createExtractFolder(dest) {
 }
 function $e2d7a47000ccff78$var$_createToolPath(tool, version, arch) {
     return $e2d7a47000ccff78$var$__awaiter(this, void 0, void 0, function*() {
-        const folderPath = $bknAJ$path.join($e2d7a47000ccff78$var$_getCacheDirectory(), tool, $60652d0c51947fdc$exports.clean(version) || version, arch || '');
+        const folderPath = $bknAJ$path.join($e2d7a47000ccff78$var$_getCacheDirectory(), tool, $7525af423601f675$exports.clean(version) || version, arch || '');
         $da816f606135dc7c$export$1c9f709888824e05(`destination ${folderPath}`);
         const markerPath = `${folderPath}.complete`;
         yield $58ae6a13f2ee10a4$export$99cd0ab753b27281(folderPath);
@@ -26370,15 +26370,15 @@ function $e2d7a47000ccff78$var$_createToolPath(tool, version, arch) {
     });
 }
 function $e2d7a47000ccff78$var$_completeToolPath(tool, version, arch) {
-    const folderPath = $bknAJ$path.join($e2d7a47000ccff78$var$_getCacheDirectory(), tool, $60652d0c51947fdc$exports.clean(version) || version, arch || '');
+    const folderPath = $bknAJ$path.join($e2d7a47000ccff78$var$_getCacheDirectory(), tool, $7525af423601f675$exports.clean(version) || version, arch || '');
     const markerPath = `${folderPath}.complete`;
     $bknAJ$fs.writeFileSync(markerPath, '');
     $da816f606135dc7c$export$1c9f709888824e05('finished caching tool');
 }
 function $e2d7a47000ccff78$export$6b234d9465eb16d6(versionSpec) {
-    const c = $60652d0c51947fdc$exports.clean(versionSpec) || '';
+    const c = $7525af423601f675$exports.clean(versionSpec) || '';
     $da816f606135dc7c$export$1c9f709888824e05(`isExplicit: ${c}`);
-    const valid = $60652d0c51947fdc$exports.valid(c) != null;
+    const valid = $7525af423601f675$exports.valid(c) != null;
     $da816f606135dc7c$export$1c9f709888824e05(`explicit? ${valid}`);
     return valid;
 }
@@ -26386,12 +26386,12 @@ function $e2d7a47000ccff78$export$fb63f74d729bfe90(versions, versionSpec) {
     let version = '';
     $da816f606135dc7c$export$1c9f709888824e05(`evaluating ${versions.length} versions`);
     versions = versions.sort((a, b)=>{
-        if ($60652d0c51947fdc$exports.gt(a, b)) return 1;
+        if ($7525af423601f675$exports.gt(a, b)) return 1;
         return -1;
     });
     for(let i = versions.length - 1; i >= 0; i--){
         const potential = versions[i];
-        const satisfied = $60652d0c51947fdc$exports.satisfies(potential, versionSpec);
+        const satisfied = $7525af423601f675$exports.satisfies(potential, versionSpec);
         if (satisfied) {
             version = potential;
             break;
